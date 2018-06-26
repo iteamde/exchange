@@ -1,0 +1,20 @@
+version: '3'
+services:
+
+  landing_pages_er:
+    environment:
+      - SSMTP_HOSTNAME=exchangerates.org.uk
+      - UKFX_API=https://api.ukfx.co.uk
+      - MC_LIST_ID=dc4884fe09
+      - MC_LIST_SINGLECURRENCY_ID=6576d742f0
+      - MC_API=bd0218daf0d4d44b449952a2ccab678e-us2
+      - RECAPTCHA=6LcutFgUAAAAAHEI3TYRFeTa1lgxRw3j9kaZH_5T
+    container_name: ukfxpages
+    image: ukfx/php:apache-stretch
+    working_dir: /var/www
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www:delegated
+      - ./public:/var/www/html:delegated
+      - ./entrypoint.sh:/entrypoint.d/pages.sh
