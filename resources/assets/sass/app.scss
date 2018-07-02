@@ -16,6 +16,14 @@ span {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.btn-info {
+    background-color: $light-blue;
+}
+
+.btn-warning {
+    background-color: $orange;
+}
+
 /*****HEADER*****/
 .header {
     width: 100%;
@@ -122,12 +130,272 @@ i.fa-envelope {
     }
 }
 
-.main-navbar {
-    .navbar-nav {
-        .nav-item {
-            padding-right: 20px;
+.top-navbar {
+    width: 100%;
+    margin: 0;
+    padding-right: 20px;
+
+    background-color: $blue;
+    border-top: 1px solid $grey;
+
+    .nav-item {
+        margin-right: 25px;
+
+        .nav-link {
             color: $white;
             font-size: 16px;
         }
+
+        &.active,
+        &:focus,
+        &:hover {
+            .nav-link {
+                color: $light-blue;
+            }
+        }
+    }
+
+}
+
+.currency-bar {
+    display: inline-block;
+    width: 150px;
+    padding: 5px;
+    background: $white;
+    border-radius: 4px;
+    margin-right: 10px;
+
+    .currency-rate {
+        font-size: 16px;
+        font-family: $font-family-open-sans;
+        line-height: 20px;
+    }
+
+    .currency-compare {
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .currency-change {
+        padding-left: 10px;
+        text-align: left;
+        font-size: 8px;
+        line-height: 8px;
+    }
+
+    .fa-caret-up {
+        font-size: 14px;
+        color: $green;
+    }
+
+    .fa-caret-down {
+        font-size: 14px;
+        color: $red;
+    }
+
+    &.rate-up {
+        .currency-rate {
+            color: $green;
+        }
+        .rate-change {
+            color: $green;
+
+            &:before {
+                content: '+ ';
+            }
+        }
+    }
+
+    &.rate-down {
+        .currency-rate {
+            color: $red;
+        }
+        .rate-change {
+            color: $red;
+
+            &:before {
+                content: '- ';
+            }
+        }
+    }
+}
+
+.fa-times {
+    color: $grey;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.with-container {
+    background-color: $white;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.breadcrumbs {
+    color: $grey;
+    font-size: 11px;
+
+    .fa {
+        font-size: 11px;
+    }
+
+    .fa-chevron-right {
+        padding: 0 8px;
+    }
+}
+
+h3 {
+    margin: 27px 0 18px 0;
+    text-align: center;
+
+    span {
+        color: $green;
+    }
+}
+
+.sub-text {
+    font-size: 12px;
+    color: $light-grey;
+    text-align: center;
+    font-family: "Open Sans";
+}
+
+.sup-text {
+    position: absolute;
+    top: -20px;
+    color: $white;
+    font-size: 13px;
+}
+
+.text {
+    font-family: "Open Sans";
+    margin: 21px 15% 30px;
+    color: $grey;
+    text-align: center;
+
+    > a {
+        color: $light-blue;
+        text-decoration: underline;
+    }
+}
+
+.exchange-section {
+    padding: 40px;
+    margin: 20px 0;
+    background-color: $blue;
+    border-radius: 4px;
+
+    .sync {
+        margin-right: 20px;
+        padding: 15px 15px 12px;
+        background-color: $light-blue;
+        border-radius: 4px;
+        cursor: pointer;
+
+        .fa-sync {
+            color: $white;
+        }
+    }
+
+    .form-control {
+        position: relative;
+        font-family: "Open Sans";
+        font-size: 18px;
+        margin-right: 20px;
+        width: 128px;
+        padding: 10px;
+
+        &.with-dd {
+            width: 200px;
+        }
+
+        &.from:before {
+            content: 'From';
+            position: absolute;
+        }
+
+        &.to:before {
+            content: 'To';
+            position: absolute;
+        }
+    }
+
+    a {
+        color: $white;
+        font-size: 13px;
+        text-decoration: underline;
+    }
+}
+
+button.btn {
+    margin-right: 10px;
+    color: $white;
+    padding: 11px;
+    min-width: 172px;
+
+    &:hover {
+        color: $white;
+    }
+}
+
+.main-section {
+    background-color: $white;
+    border-radius: 4px;
+    position: relative;
+
+    .exchange-value {
+        text-align: center;
+        font-family: "Open Sans";
+        color: $blue;
+    }
+
+    .nav-tabs {
+        width: 100%;
+
+        .nav-item {
+            width: 33.33%;
+
+            .nav-link {
+                display: flex;
+                justify-content: space-between;
+                background-color: $body-bg;
+
+                .fa {
+                    color: $light-blue;
+                    font-size: 12px;
+                    line-height: 20px;
+                }
+
+                &.active {
+                    background-color: $white;
+
+                    .fa {
+                        color: $blue;
+                    }
+                }
+            }
+        }
+    }
+
+    .text {
+        margin: 40px 0 25px 0;
+    }
+
+    h4 {
+        font-family: $font-family-open-sans;
+        color: $blue;
+    }
+
+    .fa-bars {
+        right: 10px;
+        top: 10px;
+        padding: 10px;
+
+        font-size: 16px;
+        border: 1px solid $light-grey;
+        border-radius: 4px;
+        color: $blue;
     }
 }
