@@ -7,246 +7,344 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 </head>
 <body>
-    <div id="app">
-        <!--header component-->
-        <div class="row header">
-            <div class="col-sm-12 d-flex align-items-center justify-content-between">
-                <i class="fa fa-bars text-white"></i>
-                <div class="logo-container"></div>
-                <div class="social d-flex">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fa fa-rss"></i>
-                    <i class="fa fa-envelope"></i>
-                    <div class="social-count d-flex flex-column">
-                        <span>106</span>
-                        <span>shares</span>
-                    </div>
-                </div>
-
-                <div class="search-bar d-flex align-items-center">
-                    <i class="fa fa-search"></i>
-                    <input class="form-control" type="text" placeholder="Search">
-                </div>
-
-                <div class="d-flex">
-                    <div class="saves">
-                        <i class="fa fa-star"></i>
-                        <span>Saves</span>
-                    </div>
-                    <div class="account">
-                        <i class="fa fa-user"></i>
-                        <span>Account</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--navbar component-->
-        <div class="row d-flex align-items-center justify-content-between top-navbar">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Currencies</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Commodities</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Forex</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">News</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Widgets</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Help Me</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+<div id="app">
+    <!--header component-->
+    <div class="row header">
+        <div class="col-sm-12 d-flex align-items-center justify-content-between">
             <i class="fa fa-bars text-white"></i>
-        </div>
+            <div class="logo-container"></div>
+            <div class="social d-flex">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fa fa-rss"></i>
+                <i class="fa fa-envelope"></i>
+                <div class="social-count d-flex flex-column">
+                    <span>106</span>
+                    <span>shares</span>
+                </div>
+            </div>
 
-        <!--currency bar-->
-        <div class="d-flex align-items-center p-2">
-            <div class="currency-bar rate-up">
-                <div class="currency-compare">
-                    GBP / HNL
-                    <i class="fa fa-caret-up"></i>
-                </div>
-                <div class="d-flex align-items-center justify-content-center">
-                    <div class="currency-rate">
-                        1686.10151
-                    </div>
-                    <div class="currency-change">
-                        <span class="rate-change">0.1</span>
-                        <br>
-                        <span class="rate-change">0.24 %</span>
-                    </div>
-                </div>
+            <div class="search-bar d-flex align-items-center">
+                <i class="fa fa-search"></i>
+                <input class="form-control" type="text" placeholder="Search">
             </div>
-            <div class="currency-bar rate-down">
-                <div class="currency-compare">
-                    GBP / AUD
-                    <i class="fa fa-caret-down"></i>
-                </div>
-                <div class="d-flex align-items-center justify-content-center">
-                    <div class="currency-rate">
-                        1686.10151
-                    </div>
-                    <div class="currency-change">
-                        <span class="rate-change">0.1</span>
-                        <br>
-                        <span class="rate-change">0.24 %</span>
-                    </div>
-                </div>
-            </div>
-            <div class="currency-bar rate-up">
-                <div class="currency-compare">
-                    GBP / HNL
-                    <i class="fa fa-caret-up"></i>
-                </div>
-                <div class="d-flex align-items-center justify-content-center">
-                    <div class="currency-rate">
-                        1686.10151
-                    </div>
-                    <div class="currency-change">
-                        <span class="rate-change">0.1</span>
-                        <br>
-                        <span class="rate-change">0.24 %</span>
-                    </div>
-                </div>
-            </div>
-            <div class="currency-bar rate-down">
-                <div class="currency-compare">
-                    GBP / AUD
-                    <i class="fa fa-caret-down"></i>
-                </div>
-                <div class="d-flex align-items-center justify-content-center">
-                    <div class="currency-rate">
-                        1686.10151
-                    </div>
-                    <div class="currency-change">
-                        <span class="rate-change">0.1</span>
-                        <br>
-                        <span class="rate-change">0.24 %</span>
-                    </div>
-                </div>
-            </div>
-            <div class="currency-bar rate-up">
-                <div class="currency-compare">
-                    GBP / HNL
-                    <i class="fa fa-caret-up"></i>
-                </div>
-                <div class="d-flex align-items-center justify-content-center">
-                    <div class="currency-rate">
-                        1686.10151
-                    </div>
-                    <div class="currency-change">
-                        <span class="rate-change">0.1</span>
-                        <br>
-                        <span class="rate-change">0.24 %</span>
-                    </div>
-                </div>
-            </div>
-            <div class="currency-bar rate-down">
-                <div class="currency-compare">
-                    GBP / AUD
-                    <i class="fa fa-caret-down"></i>
-                </div>
-                <div class="d-flex align-items-center justify-content-center">
-                    <div class="currency-rate">
-                        1686.10151
-                    </div>
-                    <div class="currency-change">
-                        <span class="rate-change">0.1</span>
-                        <br>
-                        <span class="rate-change">0.24 %</span>
-                    </div>
-                </div>
-            </div>
-            <i class="fa fa-times"></i>
-        </div>
 
-        <div class="row m-0">
-            <div class="col-sm-12 with-container">
-                <div class="breadcrumbs d-flex align-items-center">
-                    <i class="fa fa-home"></i>
-                    <i class="fa fa-chevron-right"></i>
-                    <span>Currency Exchange Rates</span>
-                    <i class="fa fa-chevron-right"></i>
-                    <span>Pounds to Euros</span>
+            <div class="d-flex">
+                <div class="saves">
+                    <i class="fa fa-star"></i>
+                    <span>Saves</span>
                 </div>
-                <h3>Best Pound to Euro Exchange Rate (GBP/EUR) Today <span>1GBP = 1.1560 EUR</span></h3>
-                <h6 class="sub-text">Updated every minute between Sunday 22:00 and Friday 22:00 (UK)</h6>
-                <p class="text">This Pound to Euro conversion tool allows you to compare the live inter-bank currency rate with competitive travel money
-                    exchange rates available within the foreign exchange markets. Sign up for <a href="#">free exchange rate alerts</a> or just get
-                    <a href="#">daily/weekly rates and news</a> to your inbox? Compare the best travel money rates against the high street below.</p>
-            </div>
-        </div>
-
-        <!--exchange section-->
-        <div class="row exchange-section">
-            <div class="col-sm-12 d-flex align-items-center justify-content-center">
-                <div class="d-flex flex-column">
-                    <span class="sup-text">From</span>
-                    <input type="text" class="form-control">
+                <div class="account">
+                    <i class="fa fa-user"></i>
+                    <span>Account</span>
                 </div>
-
-                <input type="text" class="form-control with-dd">
-                <div class="sync">
-                   <i class="fa fa-sync"></i>
-                </div>
-                <div class="d-flex flex-column position-relative">
-                    <span class="sup-text">To</span>
-                    <input type="text" class="form-control to">
-                </div>
-                <input type="text" class="form-control with-dd">
-                <a href="#"><&#47;> Add to Site</a>
             </div>
         </div>
     </div>
 
-    <!--main section-->
-    <div class="row main-section">
-        <div class="col-sm-12">
-            <i class="fa fa-bars position-absolute"></i>
-            <h3>Today's Pound to Euro Exchange Rate</h3>
+    <!--navbar component-->
+    <div class="row d-flex align-items-center justify-content-between top-navbar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Currencies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Commodities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Forex</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Widgets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Help Me</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <i class="fa fa-bars text-white"></i>
+    </div>
 
-            <h2 class="exchange-value">1 GBP = 1.1432 EUR</h2>
-            <h6 class="sub-text">(1 EUR = 0.28900 GBP)</h6>
+    <!--currency bar-->
+    <div class="d-flex align-items-center p-2">
+        <div class="currency-bar rate-up">
+            <div class="currency-compare">
+                GBP / HNL
+                <i class="fa fa-caret-up"></i>
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="currency-rate">
+                    1686.10151
+                </div>
+                <div class="currency-change">
+                    <span class="rate-change">0.1</span>
+                    <br>
+                    <span class="rate-change">0.24 %</span>
+                </div>
+            </div>
         </div>
-
-        <div class="text-center w-100">
-            <button class="btn btn-warning">Send Money</button>
-            <button class="btn btn-info">Rate Alert</button>
-            <button class="btn btn-info">Daily Rates Email</button>
+        <div class="currency-bar rate-down">
+            <div class="currency-compare">
+                GBP / AUD
+                <i class="fa fa-caret-down"></i>
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="currency-rate">
+                    1686.10151
+                </div>
+                <div class="currency-change">
+                    <span class="rate-change">0.1</span>
+                    <br>
+                    <span class="rate-change">0.24 %</span>
+                </div>
+            </div>
         </div>
+        <div class="currency-bar rate-up">
+            <div class="currency-compare">
+                GBP / HNL
+                <i class="fa fa-caret-up"></i>
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="currency-rate">
+                    1686.10151
+                </div>
+                <div class="currency-change">
+                    <span class="rate-change">0.1</span>
+                    <br>
+                    <span class="rate-change">0.24 %</span>
+                </div>
+            </div>
+        </div>
+        <div class="currency-bar rate-down">
+            <div class="currency-compare">
+                GBP / AUD
+                <i class="fa fa-caret-down"></i>
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="currency-rate">
+                    1686.10151
+                </div>
+                <div class="currency-change">
+                    <span class="rate-change">0.1</span>
+                    <br>
+                    <span class="rate-change">0.24 %</span>
+                </div>
+            </div>
+        </div>
+        <div class="currency-bar rate-up">
+            <div class="currency-compare">
+                GBP / HNL
+                <i class="fa fa-caret-up"></i>
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="currency-rate">
+                    1686.10151
+                </div>
+                <div class="currency-change">
+                    <span class="rate-change">0.1</span>
+                    <br>
+                    <span class="rate-change">0.24 %</span>
+                </div>
+            </div>
+        </div>
+        <div class="currency-bar rate-down">
+            <div class="currency-compare">
+                GBP / AUD
+                <i class="fa fa-caret-down"></i>
+            </div>
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="currency-rate">
+                    1686.10151
+                </div>
+                <div class="currency-change">
+                    <span class="rate-change">0.1</span>
+                    <br>
+                    <span class="rate-change">0.24 %</span>
+                </div>
+            </div>
+        </div>
+        <i class="fa fa-times"></i>
+    </div>
 
-        <h6 class="sub-text text-center w-100 m-4">The EURGBP rate as of 29 Mar 2018 at 4:24 PM</h6>
-
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Today<i class="fa fa-chevron-down"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">History<i class="fa fa-chevron-down"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Best Rates <i class="fa fa-chevron-up"></i></a>
-            </li>
-        </ul>
-
-        <div class="text-center w-100">
-            <p class="text">Compare Travel Money: Best EUR Tourist Exchange Rates</p>
-            <h4>Today's best UK deal for £500 will get you 564.25 EUR plus delivery.</h4>
-            <h6 class="sub-text">Check the table of travel money rates below to see the most competitive deals.</h6>
+    <div class="row m-0">
+        <div class="col-sm-12 with-container">
+            <div class="breadcrumbs d-flex align-items-center">
+                <i class="fa fa-home"></i>
+                <i class="fa fa-chevron-right"></i>
+                <span>Currency Exchange Rates</span>
+                <i class="fa fa-chevron-right"></i>
+                <span>Pounds to Euros</span>
+            </div>
+            <h3>Best Pound to Euro Exchange Rate (GBP/EUR) Today <span>1GBP = 1.1560 EUR</span></h3>
+            <h6 class="sub-text">Updated every minute between Sunday 22:00 and Friday 22:00 (UK)</h6>
+            <p class="text">This Pound to Euro conversion tool allows you to compare the live inter-bank currency rate with competitive travel money
+                exchange rates available within the foreign exchange markets. Sign up for <a class="link" href="#">free exchange rate alerts</a> or just get
+                <a class="link" href="#">daily/weekly rates and news</a> to your inbox? Compare the best travel money rates against the high street below.</p>
         </div>
     </div>
-    <script src="js/app.js"></script>
+
+    <!--exchange section-->
+    <div class="row exchange-section">
+        <div class="col-sm-12 d-flex align-items-center justify-content-center">
+            <div class="d-flex flex-column">
+                <span class="sup-text">From</span>
+                <input type="text" class="form-control">
+            </div>
+
+            <input type="text" class="form-control with-dd">
+            <div class="sync">
+                <i class="fa fa-sync"></i>
+            </div>
+            <div class="d-flex flex-column position-relative">
+                <span class="sup-text">To</span>
+                <input type="text" class="form-control to">
+            </div>
+            <input type="text" class="form-control with-dd">
+            <a href="#"><&#47;> Add to Site</a>
+        </div>
+    </div>
+</div>
+
+<!--main section-->
+<div class="row main-section">
+    <div class="col-sm-12">
+        <i class="fa fa-bars position-absolute"></i>
+        <h3>Today's Pound to Euro Exchange Rate</h3>
+
+        <h2 class="exchange-value">1 GBP = 1.1432 EUR</h2>
+        <h6 class="sub-text">(1 EUR = 0.28900 GBP)</h6>
+    </div>
+
+    <div class="text-center w-100">
+        <button class="btn btn-warning">Send Money</button>
+        <button class="btn btn-info">Rate Alert</button>
+        <button class="btn btn-info">Daily Rates Email</button>
+    </div>
+
+    <h6 class="sub-text text-center w-100 m-4">The EURGBP rate as of 29 Mar 2018 at 4:24 PM</h6>
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Today<i class="fa fa-chevron-down"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">History<i class="fa fa-chevron-down"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Best Rates <i class="fa fa-chevron-up"></i></a>
+        </li>
+    </ul>
+
+    <div class="text-center w-100">
+        <p class="text">Compare Travel Money: Best EUR Tourist Exchange Rates</p>
+        <h4>Today's best UK deal for £500 will get you 564.25 EUR plus delivery.</h4>
+        <h6 class="sub-text">Check the table of travel money rates below to see the most competitive deals.</h6>
+    </div>
+
+    <!--Currency-delivery-->
+    <div class="m-auto">
+        <div class="currency-delivery d-flex align-items-center justify-content-center">
+            <div class="currency-delivery-block d-flex align-items-center">
+                <img src="./images/bestforeignexchange.png" alt="">
+                <h4>Best Foreign Exchange</h4>
+            </div>
+            <div class="currency-delivery-block d-flex align-items-center flex-column">
+                <h6 class="sub-text">Exchange Rate</h6>
+                <h3>1.1432 EUR</h3>
+                <span class="divider"></span>
+            </div>
+            <div class="currency-delivery-block d-flex align-items-center flex-column text-center">
+                <h6 class="sub-text">Exchange Rate</h6>
+                <h3 class="green">FREE</h3>
+                <span class="divider"></span>
+            </div>
+            <div class="currency-delivery-block d-flex align-items-center flex-column">
+                <h6 class="sub-text">500 in EUR*</h6>
+                <h3>564.25 EUR</h3>
+            </div>
+        </div>
+        <div class="currency-delivery d-flex align-items-center justify-content-center">
+            <div class="currency-delivery-block d-flex align-items-center">
+                <img src="./images/bestforeignexchange.png" alt="">
+                <h4>Best Foreign Exchange</h4>
+            </div>
+            <div class="currency-delivery-block d-flex align-items-center flex-column">
+                <h6 class="sub-text">Exchange Rate</h6>
+                <h3>1.1432 EUR</h3>
+            </div>
+            <div class="currency-delivery-block d-flex align-items-center flex-column text-center">
+                <h6 class="sub-text">Exchange Rate</h6>
+                <h3 class="green">FREE</h3>
+            </div>
+            <div class="currency-delivery-block d-flex align-items-center flex-column">
+                <h6 class="sub-text">500 in EUR*</h6>
+                <h3>564.25 EUR</h3>
+            </div>
+        </div>
+        <div class="currency-delivery d-flex align-items-center justify-content-center">
+            <div class="currency-delivery-block d-flex align-items-center">
+                <img src="./images/bestforeignexchange.png" alt="">
+                <h4>Best Foreign Exchange</h4>
+            </div>
+            <div class="currency-delivery-block d-flex align-items-center flex-column">
+                <h6 class="sub-text">Exchange Rate</h6>
+                <h3>1.1432 EUR</h3>
+            </div>
+            <div class="currency-delivery-block d-flex align-items-center flex-column text-center">
+                <h6 class="sub-text">Exchange Rate</h6>
+                <h3 class="green">FREE</h3>
+            </div>
+            <div class="currency-delivery-block d-flex align-items-center flex-column">
+                <h6 class="sub-text">500 in EUR*</h6>
+                <h3>564.25 EUR</h3>
+            </div>
+        </div>
+        <div class="currency-delivery d-flex align-items-center justify-content-center">
+            <div class="currency-delivery-block d-flex align-items-center">
+                <img src="./images/bestforeignexchange.png" alt="">
+                <h4>Best Foreign Exchange</h4>
+            </div>
+            <div class="currency-delivery-block d-flex align-items-center flex-column">
+                <h6 class="sub-text">Exchange Rate</h6>
+                <h3>1.1432 EUR</h3>
+            </div>
+            <div class="currency-delivery-block d-flex align-items-center flex-column text-center">
+                <h6 class="sub-text">Exchange Rate</h6>
+                <h3 class="green">FREE</h3>
+            </div>
+            <div class="currency-delivery-block d-flex align-items-center flex-column">
+                <h6 class="sub-text">500 in EUR*</h6>
+                <h3>564.25 EUR</h3>
+            </div>
+        </div>
+        <div class="currency-delivery d-flex align-items-center justify-content-center">
+            <div class="currency-delivery-block d-flex align-items-center">
+                <img src="./images/bestforeignexchange.png" alt="">
+                <h4>Best Foreign Exchange</h4>
+            </div>
+            <div class="currency-delivery-block d-flex align-items-center flex-column">
+                <h6 class="sub-text">Exchange Rate</h6>
+                <h3>1.1432 EUR</h3>
+            </div>
+            <div class="currency-delivery-block d-flex align-items-center flex-column text-center">
+                <h6 class="sub-text">Exchange Rate</h6>
+                <h3 class="green">FREE</h3>
+            </div>
+            <div class="currency-delivery-block d-flex align-items-center flex-column">
+                <h6 class="sub-text">500 in EUR*</h6>
+                <h3>564.25 EUR</h3>
+            </div>
+        </div>
+
+        <a class="link" href="">Click here to see full best rates</a>
+    </div>
+</div>
+<script src="js/app.js"></script>
 </body>
 </html>
