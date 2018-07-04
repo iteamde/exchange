@@ -1,0 +1,49 @@
+@import "variables";
+
+.exchange-section {
+    padding: 40px;
+    margin: 20px 0;
+    background-color: $blue;
+    border-radius: 4px;
+
+    .sync {
+        margin-right: 20px;
+        padding: 15px 15px 12px;
+        background-color: $light-blue;
+        border-radius: 4px;
+        cursor: pointer;
+
+        .fa-sync {
+            color: $white;
+        }
+    }
+
+    .form-control {
+        position: relative;
+        font-family: "Open Sans";
+        font-size: 18px;
+        margin-right: 20px;
+        width: 128px;
+        padding: 10px;
+
+        &.with-dd {
+            width: 200px;
+        }
+
+        &.from:before {
+            content: 'From';
+            position: absolute;
+        }
+
+        &.to:before {
+            content: 'To';
+            position: absolute;
+        }
+    }
+
+    a {
+        color: $white;
+        font-size: 13px;
+        text-decoration: underline;
+    }
+}

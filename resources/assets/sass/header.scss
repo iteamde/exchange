@@ -1,0 +1,107 @@
+@import "variables";
+
+.header {
+    width: 100%;
+    min-height: 66px;
+    margin: 0;
+
+    background-color: $blue;
+}
+
+.logo-container {
+    width: 177px;
+    height: 36px;
+    background-image: url(../../images/logo.png);
+}
+
+i {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    border-radius: 4px;
+
+    font-size: 20px;
+}
+
+
+i.fa-facebook-f {
+    background-color: $mid-blue;
+    color: $white;
+}
+
+i.fa-twitter {
+    background-color: $light-blue;
+    color: $white;
+}
+
+i.fa-rss {
+    background-color: $orange;
+    color: $white;
+}
+
+i.fa-envelope {
+    background-color: $light-grey;
+    color: $white;
+}
+
+.social i{
+    display: flex;
+    align-items: center;
+
+    margin: 0 2px;
+    width: 39px;
+    height: 39px;
+    cursor: pointer;
+}
+
+.social-count {
+    padding: 0 10px;
+    color: $white;
+    text-align: center;
+
+    span {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+
+.search-bar {
+    width: 376px;
+    height: 39px;
+    border-radius: 4px;
+    background-color: $dark-blue;
+    padding: 13px 16px 12px;
+
+    .fa-search {
+        font-size: 14px;
+        color: $light-blue;
+    }
+
+    .form-control {
+        background: none;
+        border: none;
+        color: $white;
+    }
+}
+
+.saves {
+    padding-right: 15px;
+    border-right: 1px solid $light-grey;
+}
+
+.account {
+    padding-left: 15px;
+}
+
+.saves,
+.account {
+    line-height: 1;
+    color: $light-grey;
+    cursor: pointer;
+
+    .fa {
+        font-size: 14px;
+        padding-right: 5px;
+    }
+}

@@ -1,0 +1,65 @@
+@import "variables";
+
+
+.currency-bar {
+    display: inline-block;
+    width: 150px;
+    padding: 5px;
+    background: $white;
+    border-radius: 4px;
+    margin-right: 10px;
+
+    .currency-rate {
+        font-size: 16px;
+        font-family: $open-sans-semibold;
+        line-height: 20px;
+    }
+
+    .currency-compare {
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .currency-change {
+        padding-left: 10px;
+        text-align: left;
+        font-size: 8px;
+        line-height: 8px;
+    }
+
+    .fa-caret-up {
+        font-size: 14px;
+        color: $green;
+    }
+
+    .fa-caret-down {
+        font-size: 14px;
+        color: $red;
+    }
+
+    &.rate-up {
+        .currency-rate {
+            color: $green;
+        }
+        .rate-change {
+            color: $green;
+
+            &:before {
+                content: '+ ';
+            }
+        }
+    }
+
+    &.rate-down {
+        .currency-rate {
+            color: $red;
+        }
+        .rate-change {
+            color: $red;
+
+            &:before {
+                content: '- ';
+            }
+        }
+    }
+}

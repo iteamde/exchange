@@ -1,0 +1,67 @@
+@import "variables";
+
+.currency-delivery {
+    border: 1px solid $light-grey;
+    border-radius: 4px;
+    margin: 10px;
+
+    .currency-delivery-block {
+        position: relative;
+        padding: 20px 35px;
+
+        &:first-child:before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -1px;
+            display: block;
+            width: 5px;
+            height: 20px;
+            background-color: $white;
+            border: 1px solid $light-grey;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border-top: none;
+        }
+
+        &:first-child:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: -1px;
+            display: block;
+            width: 5px;
+            height: 20px;
+            background-color: $white;
+            border: 1px solid $light-grey;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom: none;
+        }
+
+        h4 {
+            width: 70px;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: $blue;
+            margin: 0;
+            font-family: $open-sans-semibold;
+        }
+
+        .green {
+            color: $green;
+        }
+
+        .divider {
+            width: 1px;
+            background-color: $light-grey;
+            height: 45px;
+            position: absolute;
+            right: 0;
+        }
+    }
+}
