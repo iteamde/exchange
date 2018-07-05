@@ -1,17 +1,17 @@
 <template>
     <div class="currency-bar rate-up">
         <div class="currency-compare">
-            GBP / HNL
+            {{pair.iso}} / {{pair.iso2}}
             <i class="fa fa-caret-up"></i>
         </div>
         <div class="d-flex align-items-center justify-content-center">
             <div class="currency-rate">
-                1686.10151
+                {{pair.value}}
             </div>
             <div class="currency-change">
-                <span class="rate-change">0.1</span>
+                <span class="rate-change">{{pair.diff}}</span>
                 <br>
-                <span class="rate-change">0.24 %</span>
+                <span class="rate-change">{{pair.diffp}} %</span>
             </div>
         </div>
     </div>
@@ -20,6 +20,9 @@
 <script>
     export default {
         name: 'CurrencyBar',
+        props: {
+            pair: {type: Object, required: true}
+        },
         mounted() {
             console.log('Component mounted.')
         }

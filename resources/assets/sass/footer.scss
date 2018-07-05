@@ -1,0 +1,38 @@
+@import "variables";
+
+.footer {
+    width: 100%;
+    min-height: 66px;
+    padding: 35px 0;
+    margin: 0;
+
+    background-color: $blue;
+}
+
+.logo-container {
+    width: 177px;
+    height: 36px;
+    background-image: url(../../images/logo.png);
+}
+
+i {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+    background-color: $white;
+    color: $mid-blue
+}
+
+.social i{
+    display: flex;
+    align-items: center;
+
+    margin: 0 2px;
+    width: 39px;
+    height: 39px;
+    cursor: pointer;
+}

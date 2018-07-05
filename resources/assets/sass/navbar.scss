@@ -1,0 +1,27 @@
+@import "variables";
+
+
+.main-navbar {
+    margin: 0;
+    padding-right: 20px;
+
+    background-color: $blue;
+
+    .nav-item {
+        margin-right: 25px;
+
+        .nav-link {
+            color: $white;
+            font-size: 16px;
+        }
+
+        &.active,
+        &:focus,
+        &:hover {
+            .nav-link {
+                color: $light-blue;
+            }
+        }
+    }
+
+}

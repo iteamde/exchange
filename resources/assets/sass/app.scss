@@ -11,6 +11,9 @@ span {
     font-family: $open-sans-semibold;
 }
 
+/deep/ NavBar {
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -29,32 +32,6 @@ a.link {
     text-decoration: underline;
 }
 
-.top-navbar {
-    width: 100%;
-    margin: 0;
-    padding-right: 20px;
-
-    background-color: $blue;
-    border-top: 1px solid $grey;
-
-    .nav-item {
-        margin-right: 25px;
-
-        .nav-link {
-            color: $white;
-            font-size: 16px;
-        }
-
-        &.active,
-        &:focus,
-        &:hover {
-            .nav-link {
-                color: $light-blue;
-            }
-        }
-    }
-
-}
 .fa-times {
     color: $grey;
     font-size: 16px;

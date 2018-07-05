@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import API_URL from './config'
+import {API_URL} from './config'
 
 const ApiService = {
     init () {
-        Vue.use(VueAxios, axios)
+        Vue.use(VueAxios, axios);
         Vue.axios.defaults.baseURL = API_URL;
     },
 
@@ -53,12 +53,6 @@ const ApiService = {
 
 export default ApiService
 
-export const TagsService = {
-    get () {
-        return ApiService.get('tags')
-    }
-}
-
 export const ArticlesService = {
     query (type, params) {
         return ApiService
@@ -100,11 +94,36 @@ export const CommentsService = {
     }
 }
 
-export const FavoriteService = {
-    add (slug) {
-        return ApiService.post(`articles/${slug}/favorite`)
+export const CurrencyService = {
+    getAllCurrencies () {
+        return ApiService.get(`currency`)
     },
-    remove (slug) {
-        return ApiService.delete(`articles/${slug}/favorite`)
+    getQuotes (iso) {
+        return ApiService.get(`travel-money/${iso}/quotes`)
+    },
+
+    getCards () {
+        return ApiService.get(`travel-money/cards`)
+    },
+    getCurrency () {
+        return ApiService.get(`travel-money/currency`)
+    },
+    getRates () {
+        return ApiService.get(`rates`)
+    },
+    getHistoryRatesPeriod (iso, minDate, maxDate) {
+        return ApiService.get(`rates/${iso}/history?mindate=${minDate}&maxdate=${maxDate}`)
+    },
+    getHistoryRatesDay (iso, date) {
+        return ApiService.get(`rates/${iso}/history?date=${date}`)
+    },
+    getLatestPairRates (iso1, iso2) {
+        return ApiService.get(`pairs/${iso1}`)
+    },
+    getPairHistoryRatesPeriod (iso1, iso2, minDate, maxDate) {
+        return ApiService.get(`pairs/${iso1}/${iso2}/history?mindate${minDate}&maxdate=${maxDate}`)
+    },
+    getPairHistoryRatesDay (iso1, iso2, date) {
+        return ApiService.get(`pairs/${iso1}/${iso2}/history?date=${date}`)
     }
 }
