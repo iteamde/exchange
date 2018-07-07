@@ -1,0 +1,46 @@
+@import "variables";
+
+
+.nav-tabs {
+    width: 100%;
+
+    .nav-item {
+        width: 33.33%;
+
+        .nav-link {
+            display: flex;
+            justify-content: space-between;
+            background-color: $body-bg;
+
+            .fa {
+                color: $light-blue;
+                font-size: 12px;
+                line-height: 20px;
+            }
+
+            .fa-chevron-up {
+                display: none;
+            }
+
+            &.active {
+                background-color: $white;
+
+                .fa {
+                    color: $blue;
+                }
+
+                .fa-chevron-up {
+                    display: block;
+                }
+
+                .fa-chevron-down {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    a {
+        cursor: pointer;
+    }
+}

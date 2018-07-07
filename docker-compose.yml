@@ -13,7 +13,7 @@ services:
     image: ukfx/php:apache-stretch
     working_dir: /var/www
     ports:
-      - "80:80"
+      - "8080:80"
     volumes:
       - ./:/var/www:delegated
       - ./public:/var/www/html:delegated

@@ -11,9 +11,6 @@ span {
     font-family: $open-sans-semibold;
 }
 
-/deep/ NavBar {
-}
-
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -110,33 +107,6 @@ button.btn {
         color: $blue;
     }
 
-    .nav-tabs {
-        width: 100%;
-
-        .nav-item {
-            width: 33.33%;
-
-            .nav-link {
-                display: flex;
-                justify-content: space-between;
-                background-color: $body-bg;
-
-                .fa {
-                    color: $light-blue;
-                    font-size: 12px;
-                    line-height: 20px;
-                }
-
-                &.active {
-                    background-color: $white;
-
-                    .fa {
-                        color: $blue;
-                    }
-                }
-            }
-        }
-    }
 
     .text {
         margin: 40px 0 25px 0;

@@ -22,7 +22,7 @@
 
 <script>
     export default {
-        name: 'Header',
+        name: 'TheExchangeBar',
         mounted() {
             console.log('Component mounted.')
         }
