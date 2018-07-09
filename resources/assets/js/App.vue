@@ -2,7 +2,6 @@
     <div>
         <Header/>
         <NavBar/>
-        <i class="fa fa-bars text-white"></i>
         <div class="d-flex align-items-center p-2">
             <CurrencyBar
                 v-for="pair in pairRates"
@@ -10,25 +9,29 @@
             </CurrencyBar>
         </div>
         <div class="row m-0">
-            <div class="col-sm-12 with-container">
-                <div class="breadcrumbs d-flex align-items-center">
-                    <i class="fa fa-home"></i>
-                    <i class="fa fa-chevron-right"></i>
-                    <span>Currency Exchange Rates</span>
-                    <i class="fa fa-chevron-right"></i>
-                    <span>Pounds to Euros</span>
-                </div>
-                <h3>Best Pound to Euro Exchange Rate (GBP/EUR) Today <span>1GBP = 1.1560 EUR</span></h3>
-                <h6 class="sub-text">Updated every minute between Sunday 22:00 and Friday 22:00 (UK)</h6>
-                <p class="text">This Pound to Euro conversion tool allows you to compare the live inter-bank currency rate with competitive travel money
+            <div class="content-container">
+                <div class="col-sm-12 with-container">
+                    <div class="breadcrumbs d-flex align-items-center">
+                        <i class="fa fa-home"></i>
+                        <i class="fa fa-chevron-right"></i>
+                        <span>Currency Exchange Rates</span>
+                        <i class="fa fa-chevron-right"></i>
+                        <span>Pounds to Euros</span>
+                    </div>
+                    <h3 class="hhh">Best Pound to Euro Exchange Rate (GBP/EUR) Today <span>1GBP = 1.1560 EUR</span></h3>
+                    <h6 class="sub-text">Updated every minute between Sunday 22:00 and Friday 22:00 (UK)</h6>
+                    <p class="text">This Pound to Euro conversion tool allows you to compare the live inter-bank currency rate with competitive travel money
                     exchange rates available within the foreign exchange markets. Sign up for <a class="link" href="#">free exchange rate alerts</a> or just get
                     <a class="link" href="#">daily/weekly rates and news</a> to your inbox? Compare the best travel money rates against the high street below.</p>
+                </div>
             </div>
         </div>
 
-        <ExchangeBar></ExchangeBar>
+        <div class="content-container">
+            <ExchangeBar></ExchangeBar>
+        </div>
 
-        <div class="row main-section">
+        <div class="row main-section content-container">
             <div class="col-sm-12">
                 <i class="fa fa-bars position-absolute"></i>
                 <h3>Today's Pound to Euro Exchange Rate</h3>

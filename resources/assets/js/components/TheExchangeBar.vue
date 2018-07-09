@@ -6,7 +6,12 @@
                 <input type="text" class="form-control">
             </div>
 
-            <input type="text" class="form-control with-dd">
+            <!-- <input type="text" class="form-control with-dd"> -->
+            <select name="" id="" class="form-control with-select">
+                <option value="eng" selected>
+                    <span class="option-el">Eng</span>
+                </option>
+            </select>
             <div class="sync">
                 <i class="fa fa-sync"></i>
             </div>
@@ -15,7 +20,7 @@
                 <input type="text" class="form-control to">
             </div>
             <input type="text" class="form-control with-dd">
-            <a href="#"><&#47;> Add to Site</a>
+            <a href="#"> <&#47;> Add to Site</a>
         </div>
     </div>
 </template>

@@ -22,7 +22,7 @@
             </a>
         </li>
 
-        <div class="text-center" v-if="tab == 0">
+        <div class="text-center tab-content" v-if="tab == 0">
             <p class="text">Exchange Rate Today for EUR to GBP. Below you can see the chart for the Pound rate today compared to the Euro.</p>
             <LineChart></LineChart>
         </div>

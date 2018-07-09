@@ -6,12 +6,14 @@
 
     .nav-item {
         width: 33.33%;
-
+        border-top: 1px solid $light-grey;
         .nav-link {
             display: flex;
             justify-content: space-between;
             background-color: $body-bg;
-
+            border-radius: 0;
+            border: none;
+            border-right: 1px solid $light-grey;
             .fa {
                 color: $light-blue;
                 font-size: 12px;
@@ -24,6 +26,7 @@
 
             &.active {
                 background-color: $white;
+                border: none;
 
                 .fa {
                     color: $blue;
@@ -32,10 +35,18 @@
                 .fa-chevron-up {
                     display: block;
                 }
+            }
+        }
 
-                .fa-chevron-down {
-                    display: none;
-                }
+        &:first-of-type{
+            + .nav-link.active {
+                border-right: none;
+            }
+        }
+
+        &:last-of-type{ 
+            .nav-link{
+                border-right: none;
             }
         }
     }
@@ -43,4 +54,8 @@
     a {
         cursor: pointer;
     }
+}
+
+.tab-content{
+    margin: 0 auto;
 }

@@ -7,6 +7,12 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+.content-container{
+    width: 100%;
+    max-width: 1156px;
+    margin: 0 auto !important;
+}
+
 span {
     font-family: $open-sans-semibold;
 }
@@ -38,8 +44,7 @@ a.link {
 .with-container {
     background-color: $white;
     border-radius: 4px;
-    padding: 10px;
-    margin: 0 10px;
+    padding: 10px;; 
 }
 
 .breadcrumbs {

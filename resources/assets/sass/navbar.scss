@@ -1,6 +1,10 @@
 @import "variables";
 
 
+.menu-btn{
+    font-size: 16px;
+}
+
 .main-navbar {
     margin: 0;
     padding-right: 20px;
@@ -9,6 +13,7 @@
 
     .nav-item {
         margin-right: 25px;
+        white-space: nowrap;
 
         .nav-link {
             color: $white;

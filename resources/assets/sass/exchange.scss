@@ -26,6 +26,15 @@
         width: 128px;
         padding: 10px;
 
+        &.with-select{
+            height: 50px;
+            .option-el{
+                max-width: 24px;
+                max-height: 16px;
+                //background-image: url(../../images/logo.png);
+            }
+        }
+
         &.with-dd {
             width: 200px;
         }
