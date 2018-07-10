@@ -1,6 +1,6 @@
 <template>
     <div class="row header">
-        <div class="col-sm-12 d-flex align-items-center justify-content-between content-container">
+        <div class="col-sm-12 d-flex align-items-center justify-content-between content-container hr">
             <i class="fa fa-bars text-white"></i>
             <div class="logo-container"></div>
             <div class="social d-flex">

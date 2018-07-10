@@ -1,0 +1,51 @@
+@import "variables";
+
+.currency-list{
+    margin-top: 5px;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    .list-from{
+        margin-right: 0px;
+    }
+    
+
+    @media (max-width: 576px){
+        .table-from{
+            margin-top: 2.7em;
+        }
+
+        td{
+            padding: 0 2em;
+        }
+    }
+    @media only screen and (min-width: 576px){
+        .list-from{
+            margin-right: 20px;
+        }
+    }
+}
+
+.currency-table{
+    text-align: left;
+    max-width: 100%;
+    width: 100%;
+    
+    thead{
+        tr{
+            line-height: 45px;
+            background-color: #f2f5f7;
+        }
+    }
+    tbody{
+        tr{
+            line-height: 45px;
+            &:nth-child(2n){
+                background-color: #fafbfc;
+            }
+            .from-currency{
+                color: $light-blue;
+                border-bottom: 1px solid $light-blue;
+            }
+        }
+    }
+}

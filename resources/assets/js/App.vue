@@ -1,6 +1,7 @@
 <template>
     <div>
         <Header/>
+        <div class="hr-nav head - nav"></div>
         <NavBar/>
         <div class="d-flex align-items-center p-2">
             <CurrencyBar
@@ -42,17 +43,20 @@
 
             <div class="text-center w-100">
                 <button class="btn btn-warning">Send Money</button>
-                <button class="btn btn-info">Rate Alert</button>
+                <button class="btn btn-info none-sm">Rate Alert</button>
                 <button class="btn btn-info">Daily Rates Email</button>
             </div>
 
             <h6 class="sub-text text-center w-100 m-4">The EURGBP rate as of 29 Mar 2018 at 4:24 PM</h6>
 
             <Tabs></Tabs>
+
+            <CurrencyList></CurrencyList>
         </div>
         <div class="m-auto">
             <!--<CurrencyDelivery></CurrencyDelivery>-->
         </div>
+        
         <Footer/>
     </div>
 </template>
@@ -66,6 +70,8 @@
     import NavBar from './components/TheNavBar.vue'
     import Tabs from './components/TheTabs.vue'
 
+    import CurrencyList from './components/CurrencyList.vue'
+
     //import {rates} from './pair-rates'
 
 
@@ -77,7 +83,8 @@
             ExchangeBar,
             Footer,
             NavBar,
-            Tabs
+            Tabs,
+            CurrencyList
         },
         computed: {
             pairRates () {

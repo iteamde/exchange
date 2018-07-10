@@ -59,6 +59,7 @@ i {
     margin: 0;
     padding: 0;
 
+
     li {
         padding: 0 10px;
         border-right: 1px solid $mid-grey;
@@ -79,6 +80,12 @@ i {
         &:last-child {
             border-right: 0;
             padding-right: 0;
+        }
+    }
+
+    @media screen and (max-width: 576px){
+        li {
+            display: block;
         }
     }
 }

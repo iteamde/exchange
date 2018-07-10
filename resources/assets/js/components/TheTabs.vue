@@ -27,7 +27,7 @@
             <LineChart></LineChart>
         </div>
 
-        <div class="text-center" v-if="tab == 1">
+        <div class="text-center tab-content" v-if="tab == 1">
             <p class="text">The best GBP to EUR rate over a historical period can be determined using the history chart and prices below:</p>
             <LineChart></LineChart>
         </div>

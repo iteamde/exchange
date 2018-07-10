@@ -1,26 +1,30 @@
 <template>
     <div class="row exchange-section">
         <div class="col-sm-12 d-flex align-items-center justify-content-center">
-            <div class="d-flex flex-column">
+            <div class="d-flex flex-column container-control">
                 <span class="sup-text">From</span>
                 <input type="text" class="form-control">
             </div>
 
             <!-- <input type="text" class="form-control with-dd"> -->
-            <select name="" id="" class="form-control with-select">
-                <option value="eng" selected>
-                    <span class="option-el">Eng</span>
-                </option>
-            </select>
+            <div class="d-flex flex-column container-control">
+                <select name="" id="" class="form-control with-select">
+                    <option value="eng" selected>
+                        <span class="option-el">Eng</span>
+                    </option>
+                </select>
+            </div>
             <div class="sync">
                 <i class="fa fa-sync"></i>
             </div>
-            <div class="d-flex flex-column position-relative">
+            <div class="d-flex flex-column position-relative container-control">
                 <span class="sup-text">To</span>
                 <input type="text" class="form-control to">
             </div>
-            <input type="text" class="form-control with-dd">
-            <a href="#"> <&#47;> Add to Site</a>
+            <div class="d-flex flex-column container-control">
+                <input type="text" class="form-control with-dd">
+            </div>
+            <a href="#" class="none-sm"> <&#47;> Add to Site</a>
         </div>
     </div>
 </template>
