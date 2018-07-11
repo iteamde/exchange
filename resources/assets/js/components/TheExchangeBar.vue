@@ -24,8 +24,9 @@
             <div class="d-flex flex-column container-control">
                 <input type="text" class="form-control with-dd">
             </div>
-            <a href="#" class="none-sm"> <&#47;> Add to Site</a>
+            <a href="#" class="none-sm">&lt; &#47; &gt; Add to Site</a>
         </div>
+
     </div>
 </template>
 
@@ -33,7 +34,7 @@
     export default {
         name: 'TheExchangeBar',
         mounted() {
-            console.log('Component mounted.')
+            console.log('Component mounted.');
         }
     }
 </script>

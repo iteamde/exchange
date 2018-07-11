@@ -23,6 +23,7 @@
     "dependencies": {
         "@fortawesome/vue-fontawesome": "^0.1.0",
         "chart.js": "^2.7.2",
+        "chosen-js": "^1.8.7",
         "vue-chartjs": "^3.3.2"
     }
 }

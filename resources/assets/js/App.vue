@@ -1,7 +1,6 @@
 <template>
     <div>
         <Header/>
-        <div class="hr-nav head - nav"></div>
         <NavBar/>
         <div class="d-flex align-items-center p-2">
             <CurrencyBar
@@ -54,8 +53,9 @@
             <CurrencyList></CurrencyList>
         </div>
         <div class="m-auto">
-            <!--<CurrencyDelivery></CurrencyDelivery>-->
+            <!-- <CurrencyDelivery></CurrencyDelivery> -->
         </div>
+            <CurrencyPages></CurrencyPages>
         
         <Footer/>
     </div>
@@ -69,6 +69,7 @@
     import {CurrencyService} from './common/apiService'
     import NavBar from './components/TheNavBar.vue'
     import Tabs from './components/TheTabs.vue'
+    import CurrencyPages from './components/CurrencyPages'
 
     import CurrencyList from './components/CurrencyList.vue'
 
@@ -84,7 +85,8 @@
             Footer,
             NavBar,
             Tabs,
-            CurrencyList
+            CurrencyList,
+            CurrencyPages
         },
         computed: {
             pairRates () {

@@ -1,7 +1,66 @@
 @import "variables";
 
+.contact-nav{
+    box-sizing: border-box;
+    margin: 2em 0;
+    .btn{
+        max-width: 122px !important;
+        min-width: 50px;
+    }
+    .btn-embed{
+        max-width: 45%;
+        
+        margin-left: -22px;
+        
+        background-color: $dark-blue;
+    }
+
+    .btn-f{
+        background-color: $mid-blue;
+    }
+
+    .btn-t{
+        background-color: $light-blue;
+    }
+
+    .btn-w{
+        background-color: $orange;
+        i{
+            transform: rotate(45deg);
+        }
+    }
+    
+    span{
+        line-height: 50px;
+        padding: 0 20px;
+    }
+
+    @media screen and (max-width: 576px){
+        .btn{
+            margin-right: 5px;
+        }
+
+        .btn-embed{
+            margin-right: 0px;
+        }
+    }
+
+    @media screen and (max-width: 720px) {
+        .btn-embed{
+            margin-left: 0;
+    
+            background-color: $dark-blue;
+        }
+
+        .btn{
+                max-height: 50px;
+        }
+    }
+}
+
 .currency-list{
     margin-top: 5px;
+
     padding-top: 2em;
     padding-bottom: 2em;
     .list-from{
@@ -26,10 +85,10 @@
 }
 
 .currency-table{
-    text-align: left;
-    max-width: 100%;
     width: 100%;
-    
+    max-width: 100%;
+
+    text-align: left;
     thead{
         tr{
             line-height: 45px;

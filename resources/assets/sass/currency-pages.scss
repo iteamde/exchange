@@ -1,0 +1,74 @@
+@import "variables";
+
+
+.currency-pages-container {
+    .head {
+        h3 {
+            font-weight: 400;
+            font-size: 16px;
+        }
+    }
+
+    .curency-pages-list {
+        max-height: 700px;
+        max-width: 1156px;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+        margin: 20px 0;
+
+        .page-list-el{
+            max-width: 16.667%;
+            
+            margin: 5px 0px;
+            padding: 0 5px;
+            h4{
+                margin-bottom: 15px;
+
+                color: $light-blue;
+                font-weight: bold;
+            }
+            ul{
+                margin: 0;
+                padding: 0;
+
+                list-style: none;
+
+                font-size: 14px;
+
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.nav-curency {
+    text-align: center;
+    margin-bottom: 10px;
+    .nav-curency-wr {
+        display: inline-block;
+
+        padding-bottom: 10px;
+        border-bottom: 1px solid $light-grey;
+
+        text-align: center;
+    }
+    .cur-link {
+        display: inline-block;
+
+        margin: 0 9.5px;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+
+        cursor: pointer;
+        color: $light-blue;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}
