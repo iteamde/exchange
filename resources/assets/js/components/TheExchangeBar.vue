@@ -8,11 +8,32 @@
 
             <!-- <input type="text" class="form-control with-dd"> -->
             <div class="d-flex flex-column container-control">
-                <select name="" id="" class="form-control with-select">
+                <!-- <select name="" id="" class="form-control with-select">
                     <option value="eng" selected>
                         <span class="option-el">Eng</span>
                     </option>
-                </select>
+                </select> -->
+                <div class="custom-select ">
+                    <div class="selected-el-container" data-selected="eng">
+                        <div class="option-el" data-value="eng">
+                            <img class="select-img-el" src="images/layerEng.png" alt=""> ENG
+                        </div>
+                    </div>
+                    <div class="option-elements hide-options">
+                        <div class="option-el" data-value="eng">
+                            <img class="select-img-el" src="images/layerEng.png" alt=""> ENG
+                        </div>
+                        <div class="option-el" data-value="rus">
+                            <img class="select-img-el" src="images/layerEng.png" alt=""> RUS
+                        </div>
+                        <div class="option-el" data-value="usa">
+                            <img class="select-img-el" src="images/layerEng.png" alt=""> USA
+                        </div>
+                        <div class="option-el" data-value="ua">
+                            <img class="select-img-el" src="images/layerEng.png" alt=""> UA
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="sync">
                 <i class="fa fa-sync"></i>

@@ -29,7 +29,7 @@
 
         <div class="text-center tab-content" v-if="tab == 1">
             <p class="text">The best GBP to EUR rate over a historical period can be determined using the history chart and prices below:</p>
-            <LineChart></LineChart>
+            <LineChartHistory></LineChartHistory>
         </div>
 
 
@@ -42,18 +42,22 @@
 
             <a class="link" href="">Click here to see full best rates</a>
         </div>
+
+        <div id="chartjs-tooltip"></div>
     </ul>
 </template>
 
 <script>
     import CurrencyDelivery from './CurrencyDelivery.vue'
     import LineChart from './LineChart.vue'
+    import LineChartHistory from './LineChartHistory.vue'
 
     export default {
         name: 'Tabs',
         components: {
             CurrencyDelivery,
-            LineChart
+            LineChart,
+            LineChartHistory
         },
         data() {
             return {tab: 0}
