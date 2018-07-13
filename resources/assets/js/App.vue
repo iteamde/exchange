@@ -2,11 +2,19 @@
     <div>
         <Header/>
         <NavBar/>
-        <div class="d-flex align-items-center p-2">
+        <div class="d-flex align-items-center p-2 content-container" v-if="currencyRatio.success">
             <CurrencyBar
-                v-for="pair in pairRates"
-                :key="pair.timestamp">
+                v-for="(pair, index) in currencyRatio.rates.slice(0, 7)"
+                :key="index" :pair = pair>
             </CurrencyBar>
+            <div class="">
+                <span @click="closeCyrrencyBar" class="currency-close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11" height="11" 
+                        viewBox="0 0 11 11"><defs><path id="rpvaa" d="M1521.8 176.2c.2.2.2.5 0 .7l-4.6 4.6 4.6 4.6a.5.5 0 1 1-.7.7l-4.6-4.6-4.6 4.6a.5.5 0 0 1-.7-.7l4.6-4.6-4.6-4.6a.5.5 0 0 1 .7-.7l4.6 4.6 4.6-4.6c.2-.2.5-.2.7 0z"/>
+                        </defs><g><g transform="translate(-1511 -176)"><use fill="#424449" xlink:href="#rpvaa"/></g></g>
+                    </svg>
+                </span>
+            </div>
         </div>
         <div class="row m-0">
             <div class="content-container">
@@ -72,6 +80,7 @@
     import CurrencyPages from './components/CurrencyPages'
 
     import CurrencyList from './components/CurrencyList.vue'
+    import axios from 'axios';
 
     //import {rates} from './pair-rates'
 
@@ -88,6 +97,14 @@
             CurrencyList,
             CurrencyPages
         },
+        data() {
+            return {
+                currencyRatio: {
+                    success: false,
+                    rates: []
+                }
+            }
+        },
         computed: {
             pairRates () {
                 /*CurrencyService.getLatestPairRates('GBP')*/
@@ -95,7 +112,19 @@
             }
         },
         mounted () {
+            axios.get('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/GBP').then((response) => {
+                console.log(response.data.success);
+                this.currencyRatio.success = response.data.success;
+                for(let i = 0; i<response.data.rates.length; i++){
+                    this.currencyRatio.rates.push(response.data.rates[i]);
+                }
+            })
             console.log('app mounted');
+        },
+        methods: {
+            closeCyrrencyBar(){
+                this.currencyRatio.success = false;
+            }
         }
     }
 </script>

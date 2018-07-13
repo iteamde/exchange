@@ -1,0 +1,87 @@
+@import "variables";
+
+
+.chart-controls{
+    margin-top: 1.5em;
+
+    .chart-btn-control{
+        border: none;
+        border-radius: 4px;
+        outline-style: none;
+    
+        cursor: pointer;
+        background-color: #fff;
+    
+        color: $dark-blue;
+        padding: 5px 10px;
+        font-weight: bold;
+
+        span{
+            font-weight: bold;
+            font-size: 1.19em;
+        }
+    
+        &.active{
+            border: 1px solid $light-blue;
+        }
+    }
+}
+
+// table style
+// .contact-nav{
+//     box-sizing: border-box;
+//     margin: 2em 0;
+//     .btn{
+//         max-width: 122px !important;
+//         min-width: 50px;
+//     }
+//     .btn-embed{
+//         max-width: 45%;
+        
+//         margin-left: -22px;
+        
+//         background-color: $dark-blue;
+//     }
+
+//     .btn-f{
+//         background-color: $mid-blue;
+//     }
+
+//     .btn-t{
+//         background-color: $light-blue;
+//     }
+
+//     .btn-w{
+//         background-color: $orange;
+//         i{
+//             transform: rotate(45deg);
+//         }
+//     }
+    
+//     span{
+//         line-height: 50px;
+//         padding: 0 20px;
+//     }
+
+//     @media screen and (max-width: 576px){
+//         .btn{
+//             margin-right: 5px;
+//         }
+
+//         .btn-embed{
+//             margin-right: 0px;
+//         }
+//     }
+
+//     @media screen and (max-width: 720px) {
+//         .btn-embed{
+//             margin-left: 0;
+    
+//             background-color: $dark-blue;
+//         }
+
+//         .btn{
+//                 max-height: 50px;
+//         }
+//     }
+// }

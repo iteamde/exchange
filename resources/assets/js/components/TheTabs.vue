@@ -28,8 +28,8 @@
         </div>
 
         <div class="text-center tab-content" v-if="tab == 1">
-            <p class="text">The best GBP to EUR rate over a historical period can be determined using the history chart and prices below:</p>
-            <LineChartHistory></LineChartHistory>
+            <!-- <line-chart-history :chart-data="datacollection"></line-chart-history> -->
+            <TabHistory></TabHistory>
         </div>
 
 
@@ -51,19 +51,59 @@
     import CurrencyDelivery from './CurrencyDelivery.vue'
     import LineChart from './LineChart.vue'
     import LineChartHistory from './LineChartHistory.vue'
+    import TabHistory from './TabHistory.vue'
 
     export default {
         name: 'Tabs',
         components: {
             CurrencyDelivery,
             LineChart,
-            LineChartHistory
+            LineChartHistory,
+            TabHistory
         },
         data() {
-            return {tab: 0}
+            return {
+                tab: 0,
+                datacollection: null
+                }
         },
         mounted() {
-            console.log('Component mounted.')
+            // console.log('Component chartHistory mounted.');
+            // fetch('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/USD/GBP/history?mindate=2017-10-23\&maxdate=2017-10-30', {method: 'GET'})
+            // .then((response) => {
+            //     return response.json().then((json) => {
+            //             console.log('chartHistory: ', json);
+            //             this.chartData = {history: json.history, success: json.success};
+            //             this.datacollection = {
+
+            //             }
+
+            //             })
+            //  }).catch(function(error){
+            //      console.log('There has been a problem with your fetch operation: ' + error.message);
+            //  });
+            // this.fillData()
+        },
+        methods: {
+            fillData () {
+                this.datacollection = {
+                labels: [this.getRandomInt(), this.getRandomInt()],
+                datasets: [
+                    {
+                    label: 'Data One',
+                    backgroundColor: '#f87979',
+                    data: [this.getRandomInt(), this.getRandomInt()]
+                    }, {
+                    label: 'Data One',
+                    backgroundColor: '#f87979',
+                    data: [this.getRandomInt(), this.getRandomInt()]
+                    }
+                ]
+                }
+            },
+            getRandomInt () {
+                return Math.floor(Math.random() * (50 - 5 + 1)) + 5
+            }
         }
     }
 </script>

@@ -95,11 +95,17 @@
 
     .select-img-el{
         margin-bottom: 4px;
+        max-width: 26px;
+        max-height: 16px;
     }
 
     .option-elements{
         width: 150px;
         max-width: 170px;
+        max-height: 200px;
+
+        overflow: auto;
+
         background: $white;
         transition: 0.5s;
 
