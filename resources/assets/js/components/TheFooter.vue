@@ -10,7 +10,7 @@
                     <i class="fa fa-envelope"></i>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-12 order-3 nav">
+            <div class="col-lg-6 col-md-6 col-12 order-3 order-md-2 nav">
                 <div class="none-sm">
                     <NavBar></NavBar>
                     <ul class="info-navbar">
@@ -56,10 +56,12 @@
                     
                 </div>
             </div>
-            <div class="col-lg-3 col-md-3 col-12 order-2 d-flex flex-column align-items-end select-language">
-                <select type="text" class="form-control with-dd lang-dd">
-                    <option value="eng">ENG</option>
-                </select>
+            <div class="col-lg-3 col-md-3 col-12 order-2 order-md-3 d-flex flex-column align-items-end select-language">
+                <label for="" class="select-wrapper">
+                    <select type="text" class="form-control with-dd lang-dd">
+                        <option value="eng">ENG</option>
+                    </select>
+                </label>
                 <div class="copyrights none-sm">Copyright © 2016-2018  Exchange Rates UK</div>
             </div>
         </div>

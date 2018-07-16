@@ -1,0 +1,43 @@
+@import "variables";
+
+table{
+    margin: 15px auto;
+    width: 100%;
+    tr{
+        background-color: #fafbfc;
+        &:nth-child(2n){
+            background-color: #ffffff;
+        }
+
+        td{
+            line-height: 46px;
+            &:first-child{
+                width: 50%;
+                max-width: 50%;
+
+                padding-right: 15px;
+                text-align: right;
+
+                color: #858f94;
+            }
+            &:last-child{
+                width: 50%;
+                max-width: 50%;
+
+                padding-left: 15px;
+                text-align: left;
+
+                color: #323336;
+            }
+        }
+    }
+}
+
+.table-link{
+    text-align: center;
+    line-height: 26px;
+    color: #858f94;
+    a{
+        color: $light-blue;
+    }
+}

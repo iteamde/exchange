@@ -37,21 +37,27 @@
                 <span class="none-sm">Share</span>
             </div>
         </div>
+
+        <TabHistoryTable v-if="dataIsLoad" :dataRates="dataForTable"></TabHistoryTable>
     </div>
 </template>
 
 <script>
     import LineChartHistory from './LineChartHistory.vue'
+    import TabHistoryTable from './tabHistroryTable.vue'
 
     export default {
         name: 'TabHistory',
         components: {
-            LineChartHistory
+            LineChartHistory,
+            TabHistoryTable
         },
         data() {
             return {
                 activeBtn: 'btn1',
                 datacollection: null,
+                dataForTable: null,
+                dataIsLoad: false,
                 options: {
                         legend: {
                         display: false
@@ -77,7 +83,7 @@
 
             /**/gradientStroke.addColorStop(1, '#1db1e5');
             // --------------------------------------
-            this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/USD/GBP/history?mindate=2017-10-23\&maxdate=2017-10-30');
+            this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/GBP/EUR/history?mindate=2017-10-23\&maxdate=2017-10-30');
             //options for chart
         },
         methods: {
@@ -99,6 +105,12 @@
                 dateString = date.getDate() + " " + this.getNameOfMounth(date.getMonth());
                 return dateString;
             },
+            getFullDate(timestamp){
+                let fullDate, date = new Date(timestamp*1000);
+                fullDate = "" + this.getNameOfDay(date.getDay()) + " " + date.getDay() + " ";
+                fullDate += this.getNameOfMounth(date.getMonth()) + " " + date.getFullYear();
+                return fullDate;
+            },
             getDataForChart: function(data){
                 if(!data){
                     return
@@ -111,6 +123,10 @@
                 return valueForChart;
                 // console.log('value')
                 // console.log(this.valueForChart);
+            },
+            getNameOfDay(index){
+                let date = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+                return date[index]
             },
             getNameOfMounth(index){
                 switch (index) {
@@ -156,27 +172,27 @@
             },
             getDataForSevenDays(){
                 this.activeBtn = 'btn1';
-                this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/USD/GBP/history?mindate=2017-10-23\&maxdate=2017-10-30');
+                this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/GBP/EUR/history?mindate=2017-10-23\&maxdate=2017-10-30');
             },
             getDateForMonth(){
                 this.activeBtn = 'btn2';
-                this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/USD/GBP/history?mindate=2017-10-1&maxdate=2017-10-30');
+                this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/GBP/EUR/history?mindate=2017-10-1&maxdate=2017-10-30');
             },
             getDateForThreeMonth(){
                 this.activeBtn = 'btn3';
-                this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/USD/GBP/history?mindate=2017-7-1&maxdate=2017-10-30');
+                this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/GBP/EUR/history?mindate=2017-7-1&maxdate=2017-10-30');
             },
             getDateForSixMonth(){
                 this.activeBtn = 'btn4';
-                this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/USD/GBP/history?mindate=2017-4-1&maxdate=2017-10-30');
+                this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/GBP/EUR/history?mindate=2017-4-1&maxdate=2017-10-30');
             },
             getDateForNineMonth(){
                 this.activeBtn = 'btn5';
-                this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/USD/GBP/history?mindate=2017-2-1&maxdate=2017-10-30');
+                this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/GBP/EUR/history?mindate=2017-2-1&maxdate=2017-10-30');
             },
             getDateForTheYear(){
                 this.activeBtn = 'btn6';
-                this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/USD/GBP/history?mindate=2016-10-1&maxdate=2017-10-30');
+                this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/GBP/EUR/history?mindate=2016-10-1&maxdate=2017-10-30');
             },
             requestDataForTheChart(url){
                 //--- style for line 
@@ -188,6 +204,8 @@
                 fetch(url, {method: 'GET'})
                 .then((response) => {
                     return response.json().then((json) => {
+                        console.log(json);
+                        this.getDataForTables(json);
                         this.datacollection = {
                             labels: this.getDateForChart(json),
                             datasets: [
@@ -202,11 +220,23 @@
                                 data: this.getDataForChart(json)
                                 }
                             ]
-                        }
+                        };
+                        this.dataIsLoad = true;
                     })
                 }).catch(function(error){
-                    console.log('There has been a problem with TabHistory fetch operation: ' + error.message);
+                    this.dataIsLoad = false;
+                    
                 });
+            },
+            getDataForTables(data){
+                this.dataForTable = [];
+                
+                for(let i = 0; i < data.history.length; i++){
+                    this.dataForTable.push({
+                        fullDate: this.getFullDate(data.history[i].timestamp),
+                        rates: "1 " + "GBP" + " = " + data.history[i].value + " EUR"
+                    });
+                }
             }
         }
     }

@@ -5,7 +5,7 @@
             <line-chart-history :chart-data="datacollection" :options="options"></line-chart-history>
         </div>
 
-        <!-- <div class="row contact-nav">
+        <div class="row contact-nav">
             <div class="col-6 col-sm-6 col-md-4 col-lg-6">
                 <button class="btn btn-embed">
                     Embed
@@ -26,7 +26,7 @@
                 </button>
                 <span class="none-sm">Share</span>
             </div>
-        </div> -->
+        </div>
     </div>
 </template>
 

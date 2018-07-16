@@ -10,6 +10,36 @@
 
     text-align: center;
 
+    .select-wrapper{
+        &::after{
+            content:'>';
+            font:11px "Consolas", monospace;
+            color:$light-blue;
+            -webkit-transform:rotate(90deg);
+            -moz-transform:rotate(90deg);
+            -ms-transform:rotate(90deg);
+            transform:rotate(90deg);
+            right: 33px;
+            top: 6px;
+            padding:0 0 2px;
+            font-size: 20px;
+            position:absolute;
+            pointer-events:none
+        }
+
+        &::before{
+            width:20px;
+            height:20px;
+            content:'';
+            right: 20px;
+            top: 4px;
+
+            background-color: $dark-blue;
+            position:absolute;
+            pointer-events:none;
+        }
+    }
+
     @media screen and(max-width: 576px){
         .order-1{
             text-align: center;
@@ -22,6 +52,9 @@
         .select-language{
             margin-top: 1.5em;
             margin-bottom: 1.5em;
+            .select-wrapper{
+                width: 100%;
+            }
             select{
                 width: 100%;
                 max-width: 100%;
