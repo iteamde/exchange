@@ -24,7 +24,7 @@
 
         <div class="text-center tab-content" v-if="tab == 0">
             <p class="text">Exchange Rate Today for EUR to GBP. Below you can see the chart for the Pound rate today compared to the Euro.</p>
-            <LineChart></LineChart>
+            <TabHourHistory></TabHourHistory>
         </div>
 
         <div class="text-center tab-content" v-if="tab == 1">
@@ -50,8 +50,9 @@
 <script>
     import CurrencyDelivery from './CurrencyDelivery.vue'
     import LineChart from './LineChart.vue'
-    import LineChartHistory from './LineChartHistory.vue'
-    import TabHistory from './TabHistory.vue'
+    import LineChartHistory from './tabHistory/LineChartHistory.vue'
+    import TabHistory from './tabHistory/TabHistory.vue'
+    import TabHourHistory from './tabHour/TabHourHistory.vue'
 
     export default {
         name: 'Tabs',
@@ -59,7 +60,8 @@
             CurrencyDelivery,
             LineChart,
             LineChartHistory,
-            TabHistory
+            TabHistory,
+            TabHourHistory
         },
         data() {
             return {

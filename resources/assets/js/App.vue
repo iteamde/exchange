@@ -41,7 +41,7 @@
 
         <div class="row main-section content-container">
             <i class="fa fa-bars position-absolute"></i>
-            <div class="offset-sm-1 offset-md-0 col-10 col-lg-12 col-md-12 currency-panel">
+            <div class="offset-1 offset-sm-1 offset-md-0 col-10 col-lg-12 col-md-12 currency-panel">
                 <h3 class="none-sm">Today's Pound to Euro Exchange Rate</h3>
 
                 <h2 class="exchange-value">1 GBP = 1.1432 EUR</h2>
@@ -58,7 +58,7 @@
 
             <Tabs></Tabs>
 
-            <CurrencyList></CurrencyList>
+            <!-- <CurrencyList></CurrencyList> -->
         </div>
         <div class="m-auto">
             <!-- <CurrencyDelivery></CurrencyDelivery> -->

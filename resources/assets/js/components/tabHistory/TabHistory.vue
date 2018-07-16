@@ -3,7 +3,7 @@
         <p class="text">The best GBP to EUR rate over a historical period can be determined using the history chart and prices below:</p>
 
         <div class="chart-canvas-wrapper">
-            <line-chart-history :chart-data="datacollection"></line-chart-history>
+            <line-chart-history :chart-data="datacollection" :options="options"></line-chart-history>
         </div>
 
         <div class="chart-controls">
@@ -15,16 +15,16 @@
             <button class="chart-btn-control" :class="{active: activeBtn === 'btn6'}" v-on:click="getDateForTheYear()"><span>1</span>Y</button>
         </div>
 
-        <!-- <div class="row contact-nav">
-            <div class="offset-md-2 offset-lg-2 col-6 col-sm-6 col-md-4 col-lg-4">
+        <div class="row contact-nav">
+            <div class="col-6 col-sm-6 col-md-4 col-lg-6">
                 <button class="btn btn-embed">
                     Embed
                 </button>
-                <button class="btn">
+                <button class="btn btn-print">
                     <i class="fas fa-print"></i> print
                 </button>
             </div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4 d-flex flex-row-reverse">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 d-flex flex-row-reverse">
                 <button class="btn btn-w">
                     <i class="fas fa-wifi"></i>
                 </button>
@@ -36,25 +36,37 @@
                 </button>
                 <span class="none-sm">Share</span>
             </div>
-        </div> -->
+        </div>
     </div>
 </template>
 
 <script>
-    import LineChart from './LineChart.vue'
     import LineChartHistory from './LineChartHistory.vue'
 
     export default {
         name: 'TabHistory',
         components: {
-            LineChart,
             LineChartHistory
         },
         data() {
             return {
                 activeBtn: 'btn1',
-                datacollection: null
+                datacollection: null,
+                options: {
+                        legend: {
+                        display: false
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales:{
+                        xAxes:[{
+                            gridLines: {
+                                display: false
+                            }
+                        }]
+                    }
                 }
+            }
         },
         mounted() {
             console.log('Component chartHistory mounted.');
@@ -66,7 +78,7 @@
             /**/gradientStroke.addColorStop(1, '#1db1e5');
             // --------------------------------------
             this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/USD/GBP/history?mindate=2017-10-23\&maxdate=2017-10-30');
-            //this.fillData()
+            //options for chart
         },
         methods: {
             getDateForChart(data){
@@ -177,40 +189,19 @@
                 .then((response) => {
                     return response.json().then((json) => {
                         this.datacollection = {
-                        labels: this.getDateForChart(json),
-                        datasets: [
-                            {
-                            label: 'Rates',
-                            // fontColor: "#666",
-                            lineTension: 0,
-                            // pointRadius: 0,
-                            fill: false,
-                            borderColor: gradientStroke,
-                            pointBackgroundColor: gradientStroke,
-                            data: this.getDataForChart(json)
-                            }
-                        ],
-                        options:{
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            scales: {
-                                yAxes: [{
-                                    stacked: true,
-                                    gridLines: {
-                                        display: true,
-                                        color: "rgba(255,99,132,0.2)"
-                                    },
-                                    ticks: {
-                                        beginAtZero:true
-                                    }
-                                }],
-                                xAxes:[{
-                                    gridLines: {
-                                        display: false
-                                    }
-                                }]
-                            }
-                        }
+                            labels: this.getDateForChart(json),
+                            datasets: [
+                                {
+                                label: 'Rates',
+                                // fontColor: "#666",
+                                lineTension: 0,
+                                pointRadius: 0,
+                                fill: false,
+                                borderColor: gradientStroke,
+                                pointBackgroundColor: gradientStroke,
+                                data: this.getDataForChart(json)
+                                }
+                            ]
                         }
                     })
                 }).catch(function(error){
@@ -222,5 +213,5 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../sass/TabHistory.scss";
+    @import "../../../sass/TabHistory.scss";
 </style>

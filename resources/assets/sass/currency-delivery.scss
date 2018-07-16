@@ -63,5 +63,9 @@
             position: absolute;
             right: 0;
         }
+
+        @media screen and (max-width: 576px) {
+            padding: 10px 5px
+        }
     }
 }

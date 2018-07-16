@@ -1,5 +1,22 @@
 @import "variables";
 
+.chart-canvas-wrapper{
+    width: 886px;
+    margin: 0 auto;
+    position: relative;
+
+    @media screen and (max-width:768px) {
+        width: 575px;
+    };
+
+    @media screen and (max-width:425px) {
+        width: 355px;
+    };
+
+    @media screen and (max-width:320px) {
+        width: 295px;
+    };
+}
 
 .chart-controls{
     margin-top: 1.5em;
@@ -28,60 +45,64 @@
 }
 
 // table style
-// .contact-nav{
-//     box-sizing: border-box;
-//     margin: 2em 0;
-//     .btn{
-//         max-width: 122px !important;
-//         min-width: 50px;
-//     }
-//     .btn-embed{
-//         max-width: 45%;
+.contact-nav{
+    box-sizing: border-box;
+    margin: 2em 0;
+    .btn{
+        max-width: 122px !important;
+        min-width: 50px;
+    }
+
+    .btn-print, .btn-embed{
+        width: 122px;
+        max-width: 45% !important;
+    }
+
+    .btn-embed{
+        margin-left: -22px;
         
-//         margin-left: -22px;
-        
-//         background-color: $dark-blue;
-//     }
+        background-color: $dark-blue;
+    }
 
-//     .btn-f{
-//         background-color: $mid-blue;
-//     }
+    .btn-f{
+        background-color: $mid-blue;
+    }
 
-//     .btn-t{
-//         background-color: $light-blue;
-//     }
+    .btn-t{
+        background-color: $light-blue;
+    }
 
-//     .btn-w{
-//         background-color: $orange;
-//         i{
-//             transform: rotate(45deg);
-//         }
-//     }
+    .btn-w{
+        background-color: $orange;
+        i{
+            transform: rotate(45deg);
+        }
+    }
     
-//     span{
-//         line-height: 50px;
-//         padding: 0 20px;
-//     }
+    span{
+        line-height: 50px;
+        padding: 0 20px;
+    }
 
-//     @media screen and (max-width: 576px){
-//         .btn{
-//             margin-right: 5px;
-//         }
+    @media screen and (max-width: 576px){
+        .btn{
+            margin-right: 5px;
+        }
 
-//         .btn-embed{
-//             margin-right: 0px;
-//         }
-//     }
+        .btn-embed{
+            margin-right: 0px;
+        }
+    }
 
-//     @media screen and (max-width: 720px) {
-//         .btn-embed{
-//             margin-left: 0;
+    @media screen and (max-width: 720px) {
+        .btn-embed{
+            margin-left: 0;
     
-//             background-color: $dark-blue;
-//         }
+            background-color: $dark-blue;
+        }
 
-//         .btn{
-//                 max-height: 50px;
-//         }
-//     }
-// }
+        .btn{
+                max-height: 50px;
+        }
+    }
+}

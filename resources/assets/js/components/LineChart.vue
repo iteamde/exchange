@@ -39,7 +39,18 @@
                         pointBackgroundColor: gradientStroke,
                         data: [0.8702, 0.8722, 0.8732, 0.8755, 0.8775, 0.8702, 0.8722, 0.8732, 0.8755, 0.8775]
                     }
-                ]
+                ],
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales:{
+                        xAxes:[{
+                            gridLines: {
+                                display: false
+                            }
+                        }]
+                    }
+                }
                 
             })
         },

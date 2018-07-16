@@ -13,7 +13,7 @@
                 <button class="btn btn-w">
                     <i class="fas fa-wifi"></i>
                 </button>
-                           <button class="btn btn-t">
+                    <button class="btn btn-t">
                     <i class="fab fa-twitter"></i>
                 </button>
                 <button class="btn btn-f">
