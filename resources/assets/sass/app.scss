@@ -9,8 +9,16 @@
 
 @media (max-width: 576px){
     .none-sm{
-        display: none;
+        display: none !important;
     }
+
+    .hide-lg{
+        display: block !important;
+    }
+}
+
+.hide-lg{
+    display: none;
 }
 
 .content-container{
@@ -60,7 +68,6 @@ a.link {
 .breadcrumbs {
     color: $grey;
     font-size: 11px;
-
     .fa {
         font-size: 11px;
     }
@@ -116,6 +123,15 @@ button.btn {
     border-radius: 4px;
     position: relative;
 
+    .currency-panel{
+        @media screen and (max-width: 576px){
+            margin-top: 26px;
+            h2{
+                font-size: 20px;
+            }
+        }
+    }
+
     .exchange-value {
         text-align: center;
         font-family: "Open Sans";
@@ -141,5 +157,18 @@ button.btn {
         border: 1px solid $light-grey;
         border-radius: 4px;
         color: $blue;
+    }
+
+    @media screen and (max-width: 576px){
+        .btns-panel{
+            .btn{
+                width: 137px;
+                min-width: 50px;
+
+                &:last-child{
+                    margin-right: 0 !important;
+                }
+            }
+        }
     }
 }

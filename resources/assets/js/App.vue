@@ -2,7 +2,7 @@
     <div>
         <Header/>
         <NavBar/>
-        <div class="d-flex align-items-center p-2 content-container" v-if="currencyRatio.success">
+        <div class="d-flex align-items-center p-2 content-container none-sm" v-if="currencyRatio.success">
             <CurrencyBar
                 v-for="(pair, index) in currencyRatio.rates.slice(0, 7)"
                 :key="index" :pair = pair>
@@ -19,7 +19,7 @@
         <div class="row m-0">
             <div class="content-container">
                 <div class="col-sm-12 with-container">
-                    <div class="breadcrumbs d-flex align-items-center">
+                    <div class="breadcrumbs d-flex align-items-center none-sm">
                         <i class="fa fa-home"></i>
                         <i class="fa fa-chevron-right"></i>
                         <span>Currency Exchange Rates</span>
@@ -40,15 +40,15 @@
         </div>
 
         <div class="row main-section content-container">
-            <div class="col-sm-12">
-                <i class="fa fa-bars position-absolute"></i>
-                <h3>Today's Pound to Euro Exchange Rate</h3>
+            <i class="fa fa-bars position-absolute"></i>
+            <div class="offset-sm-1 offset-md-0 col-10 col-lg-12 col-md-12 currency-panel">
+                <h3 class="none-sm">Today's Pound to Euro Exchange Rate</h3>
 
                 <h2 class="exchange-value">1 GBP = 1.1432 EUR</h2>
                 <h6 class="sub-text">(1 EUR = 0.28900 GBP)</h6>
             </div>
 
-            <div class="text-center w-100">
+            <div class="text-center w-100 btns-panel">
                 <button class="btn btn-warning">Send Money</button>
                 <button class="btn btn-info none-sm">Rate Alert</button>
                 <button class="btn btn-info">Daily Rates Email</button>

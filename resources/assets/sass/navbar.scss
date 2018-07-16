@@ -5,10 +5,25 @@
     font-size: 16px;
 }
 
+@media screen and (max-width: 576px){
+    .hide-navbar{
+        height: 0 !important;
+    }
+}
+
+
 .main-navbar {
     margin: 0;
 
     background-color: $blue;
+    
+    .navbar-collapse{
+        transition: 0.6s;
+
+        @media screen and (max-width: 576px) {
+            height: 250px;
+        }
+    }
 
     .nav-item {
         margin-right: 25px;
@@ -28,6 +43,12 @@
         }
     }
 
+    @media screen and (max-width: 576px) {
+        .navbar{
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
 }
 
 

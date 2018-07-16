@@ -7,14 +7,30 @@
     background-color: $blue;
 }
 
+.btn-menu{
+    display: none;
+    @media screen and (max-width:576px){
+        display: inline-block;
+    }
+}
+
 .hr{
     border-bottom: 1px solid $grey;
+}
+
+.fa-bars{
+    margin-right: 10px;
 }
 
 .logo-container {
     width: 177px;
     height: 36px;
     background-image: url(../../images/logo.png);
+    @media screen and (max-width: 576px){
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 40px;
+    }
 }
 
 i {
@@ -86,11 +102,21 @@ i.fa-envelope {
         border: none;
         color: $white;
     }
+
+    @media screen and (max-width: 576px){
+        width: auto;
+        background-color: inherit;
+    }
 }
 
 .saves {
     padding-right: 15px;
     border-right: 1px solid $light-grey;
+    
+    @media screen and (max-width: 576px){
+        padding-right: 0;
+        border-right: none;
+    }
 }
 
 .account {
@@ -106,5 +132,9 @@ i.fa-envelope {
     .fa {
         font-size: 14px;
         padding-right: 5px;
+    }
+
+    @media screen and (max-width: 576px){
+        color: $light-blue;
     }
 }

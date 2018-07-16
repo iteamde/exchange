@@ -2,7 +2,7 @@
     <div class="row d-flex align-items-center justify-content-between main-navbar">
         <div class="content-container">
             <nav class="navbar navbar-expand-lg navbar-light" >
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-collapse hide-navbar" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Currencies</a>

@@ -2,7 +2,7 @@
     <div class="row exchange-section">
         <div class="col-sm-12 d-flex align-items-center justify-content-center">
             <div class="d-flex flex-column container-control">
-                <span class="sup-text">From</span>
+                <span class="sup-text none-sm">From</span>
                 <input type="text" class="form-control" v-model="valueFrom" @change="updateData">
             </div>
 
@@ -16,12 +16,12 @@
                 <div class="custom-select ">
                     <div class="selected-el-container" ref="fromElement">
                         <div class="option-el" data-value="eng">
-                            <img class="select-img-el" src="images/flags/gb.png" alt=""> GBR
+                            <img class="select-img-el none-sm" src="images/flags/gb.png" alt=""> GBR
                         </div>
                     </div>
                     <div class="option-elements hide-options">
                         <div class="option-el" data-value="" v-for="(item, index) in currencies" v-bind:key="index" @click="selectFrom(item)">
-                            <img class="select-img-el" v-bind:src="'images/flags/' + item.flag + '.png'" alt=""> {{item.iso}}
+                            <img class="select-img-el none-sm" v-bind:src="'images/flags/' + item.flag + '.png'" alt=""> {{item.iso}}
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                 <i class="fa fa-sync"></i>
             </div>
             <div class="d-flex flex-column position-relative container-control">
-                <span class="sup-text">To</span>
+                <span class="sup-text none-sm">To</span>
                 <input type="text" class="form-control to" v-model="valueTo">
             </div>
             <div class="d-flex flex-column container-control">
@@ -38,12 +38,12 @@
                 <div class="custom-select ">
                     <div class="selected-el-container" ref="toElement">
                         <div class="option-el" data-value="eng">
-                            <img class="select-img-el" src="images/flags/europeanunion.png" alt=""> EUR
+                            <img class="select-img-el none-sm" src="images/flags/europeanunion.png" alt=""> EUR
                         </div>
                     </div>
                     <div class="option-elements hide-options">
                         <div class="option-el" data-value="" v-for="(item, index) in currencies" v-bind:key="index" @click="selectTo(item)">
-                            <img class="select-img-el" v-bind:src="'images/flags/' + item.flag + '.png'" alt=""> {{item.iso}}
+                            <img class="select-img-el none-sm" v-bind:src="'images/flags/' + item.flag + '.png'" alt=""> {{item.iso}}
                         </div>
                     </div>
                 </div>

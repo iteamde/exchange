@@ -3,22 +3,22 @@
         <li class="nav-item" v-on:click="tab = 0" >
             <a class="nav-link" v-bind:class="{active: tab == 0}">
                 Today
-                <i class="fa fa-chevron-up"></i>
-                <i class="fa fa-chevron-down"></i>
+                <i class="fa fa-chevron-up none-sm"></i>
+                <i class="fa fa-chevron-down none-sm"></i>
             </a>
         </li>
         <li class="nav-item" v-on:click="tab = 1">
             <a class="nav-link" v-bind:class="{active: tab == 1}">
                 History
-                <i class="fa fa-chevron-up"></i>
-                <i class="fa fa-chevron-down"></i>
+                <i class="fa fa-chevron-up none-sm"></i>
+                <i class="fa fa-chevron-down none-sm"></i>
             </a>
         </li>
         <li class="nav-item" v-on:click="tab = 2">
             <a class="nav-link" v-bind:class="{active: tab == 2}">
                 Best Rates
-                <i class="fa fa-chevron-up"></i>
-                <i class="fa fa-chevron-down"></i>
+                <i class="fa fa-chevron-up none-sm"></i>
+                <i class="fa fa-chevron-down none-sm"></i>
             </a>
         </li>
 
