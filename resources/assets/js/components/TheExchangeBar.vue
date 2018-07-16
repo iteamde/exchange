@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="none-sm">&lt; &#47; &gt; Add to Site</a>
+            <a href="#" class="none-sm"><span class="symbols">&lt;&#47;&gt;</span> Add to Site</a>
         </div>
     </div>
 </template>

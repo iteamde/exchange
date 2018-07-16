@@ -1,5 +1,7 @@
 @import "variables";
 
+
+
 .exchange-section {
     padding: 40px;
     margin: 20px 0;
@@ -9,6 +11,12 @@
         padding: 4px;
     }
 
+    .symbols{
+        letter-spacing: 3px;
+        font-size: 13px;
+        margin-left: 20px;
+    }
+    
     .container-control{
         max-width: 22%;
         margin: 0 2px;
@@ -89,10 +97,39 @@
     height: 50px;
     line-height: 50px;
     display: inline-block;
+    position: relative;
 
     background-color: #FAFAFA;
 
     padding-top: 4px;
+
+    &::after{
+        content:'>';
+        font:11px "Consolas", monospace;
+        color:$light-blue;
+        -webkit-transform:rotate(90deg);
+        -moz-transform:rotate(90deg);
+        -ms-transform:rotate(90deg);
+        transform:rotate(90deg);
+        right: 10px;
+        top: 11px;
+        padding:0 0 2px;
+        font-size: 20px;
+        position:absolute;
+        pointer-events:none
+    }
+
+    &::before{
+        width:20px;
+        height:20px;
+        content:'';
+        right: 10px;
+        top: 10px;
+
+        background-color: #FAFAFA;
+        position:absolute;
+        pointer-events:none;
+    }
 
     cursor: pointer;
 

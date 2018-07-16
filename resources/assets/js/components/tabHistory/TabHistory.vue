@@ -37,6 +37,7 @@
                 <span class="none-sm">Share</span>
             </div>
         </div>
+        <div id="chartjs-tooltip"></div>
 
         <TabHistoryTable v-if="dataIsLoad" :dataRates="dataForTable"></TabHistoryTable>
     </div>
@@ -58,20 +59,7 @@
                 datacollection: null,
                 dataForTable: null,
                 dataIsLoad: false,
-                options: {
-                        legend: {
-                        display: false
-                    },
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales:{
-                        xAxes:[{
-                            gridLines: {
-                                display: false
-                            }
-                        }]
-                    }
-                }
+                options: {}
             }
         },
         mounted() {
@@ -85,6 +73,20 @@
             // --------------------------------------
             this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/GBP/EUR/history?mindate=2017-10-23\&maxdate=2017-10-30');
             //options for chart
+            this.options =  {
+                legend: {
+                    display: false
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                scales:{
+                    xAxes:[{
+                        gridLines: {
+                            display: false
+                        }
+                    }]
+                }
+        }
         },
         methods: {
             getDateForChart(data){
