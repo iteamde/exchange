@@ -79,7 +79,7 @@
     import Tabs from './components/TheTabs.vue'
     import CurrencyPages from './components/CurrencyPages'
 
-    import CurrencyList from './components/CurrencyList.vue'
+    // import CurrencyList from './components/CurrencyList.vue'
     import axios from 'axios';
 
     //import {rates} from './pair-rates'
@@ -94,7 +94,7 @@
             Footer,
             NavBar,
             Tabs,
-            CurrencyList,
+            // CurrencyList,
             CurrencyPages
         },
         data() {

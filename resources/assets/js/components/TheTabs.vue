@@ -43,7 +43,6 @@
             <a class="link" href="">Click here to see full best rates</a>
         </div>
 
-        <div id="chartjs-tooltip"></div>
     </ul>
 </template>
 

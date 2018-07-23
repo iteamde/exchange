@@ -66,10 +66,10 @@
             console.log('Component chartHistory mounted.');
             //--- style for line 
             /**/ var ctx = document.getElementById('line-chart').getContext("2d");
-            /**/ var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-            /**/ gradientStroke.addColorStop(0, '#365381');
+            /**/ this.gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+            /**/ this.gradientStroke.addColorStop(0, '#365381');
 
-            /**/gradientStroke.addColorStop(1, '#1db1e5');
+            /**/ this.gradientStroke.addColorStop(1, '#1db1e5');
             // --------------------------------------
             this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/GBP/EUR/history?mindate=2017-10-23\&maxdate=2017-10-30');
             //options for chart
@@ -85,6 +85,75 @@
                             display: false
                         }
                     }]
+                },
+                tooltips: {
+                    enabled: false,
+                    mode: 'index',
+                    position: 'nearest',
+                    custom: function(tooltip){
+            			// Tooltip Element
+                        var tooltipEl = document.getElementById('chartjs-tooltip');
+                        tooltipEl.innerHTML = "";
+                        if (!tooltipEl) {
+                            tooltipEl = document.createElement('div');
+
+                            this._chart.canvas.parentNode.appendChild(tooltipEl);
+                        }
+
+                        tooltipEl.id = 'chartjs-tooltip';
+                        tooltipEl.innerHTML = '<table></table>';
+                        
+                            // Hide if no tooltip
+                            if (tooltip.opacity === 0) {
+                                tooltipEl.style.opacity = 0;
+                                return;
+                            }
+
+                            // Set caret Position
+                            tooltipEl.classList.remove('above', 'below', 'no-transform');
+                            if (tooltip.yAlign) {
+                                tooltipEl.classList.add(tooltip.yAlign);
+                            } else {
+                                tooltipEl.classList.add('no-transform');
+                            }
+
+                            function getBody(bodyItem) {
+                                return bodyItem.lines;
+                            }
+
+                            // Set Text
+                            if (tooltip.body) {
+                                var titleLines = tooltip.title || [];
+                                var bodyLines = tooltip.body.map(getBody);
+
+                                var innerHtml = '<thead>';
+
+                            bodyLines.forEach(function(body) {
+                                innerHtml += '<tr><th>' + body +'</th></tr>';
+                            });
+                            innerHtml += '</thead><tbody>';
+
+                            titleLines.forEach(function(title, i) {
+                                innerHtml += '<tr><td class="bottom">' + title + '</td></tr>';
+                            });
+                            innerHtml += '</tbody>';
+
+                            var tableRoot = tooltipEl.querySelector('table');
+                            tableRoot.innerHTML = innerHtml;
+                        }
+
+                        var positionY = this._chart.canvas.offsetTop;
+                        var positionX = this._chart.canvas.offsetLeft;
+
+                        // Display, position, and set styles for font
+                        tooltipEl.style.opacity = 1;
+                        tooltipEl.style.left = positionX + tooltip.caretX + 'px';
+                        tooltipEl.style.top = positionY + tooltip.caretY + 'px';
+                        tooltipEl.style.fontFamily = tooltip._bodyFontFamily;
+                        tooltipEl.style.fontSize = tooltip.bodyFontSize + 'px';
+                        tooltipEl.style.fontStyle = tooltip._bodyFontStyle;
+                        tooltipEl.style.padding = tooltip.yPadding + 'px ' + tooltip.xPadding + 'px';
+                    }
                 }
         }
         },
@@ -197,16 +266,10 @@
                 this.requestDataForTheChart('https://api.ukfx.co.uk.staging.ukfx.co.uk/pairs/GBP/EUR/history?mindate=2016-10-1&maxdate=2017-10-30');
             },
             requestDataForTheChart(url){
-                //--- style for line 
-                /**/ var ctx = document.getElementById('line-chart').getContext("2d");
-                /**/ var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-                /**/ gradientStroke.addColorStop(0, '#365381');
-                /**/gradientStroke.addColorStop(1, '#1db1e5');
-                // --------------------------------------
                 fetch(url, {method: 'GET'})
                 .then((response) => {
                     return response.json().then((json) => {
-                        console.log(json);
+                        // console.log(json);
                         this.getDataForTables(json);
                         this.datacollection = {
                             labels: this.getDateForChart(json),
@@ -217,8 +280,8 @@
                                 lineTension: 0,
                                 pointRadius: 0,
                                 fill: false,
-                                borderColor: gradientStroke,
-                                pointBackgroundColor: gradientStroke,
+                                borderColor: this.gradientStroke,
+                                pointBackgroundColor: this.gradientStroke,
                                 data: this.getDataForChart(json)
                                 }
                             ]
@@ -227,7 +290,7 @@
                     })
                 }).catch(function(error){
                     this.dataIsLoad = false;
-                    
+                    console.log(error);
                 });
             },
             getDataForTables(data){

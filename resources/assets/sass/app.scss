@@ -172,3 +172,49 @@ button.btn {
         }
     }
 }
+
+
+//for toolTip chart.js
+#chartjs-tooltip {
+    position: absolute;
+
+    max-width: 170px;
+
+    border-radius: 3px;
+    padding: 10px;
+    background: #fff;
+    color: black;
+
+    opacity: 1;
+    -webkit-transition: all .1s ease;
+    transition: all .1s ease;
+    pointer-events: none;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    -webkit-box-shadow: 0px 0px 136px -15px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 136px -15px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 136px -15px rgba(0,0,0,0.75);
+
+    thead{
+        th{
+            font-size: 16px;
+            word-wrap: normal;
+         }
+    }
+
+    .bottom{
+        text-align: left;
+        color: #abb1b4;
+    }
+}
+
+.chartjs-tooltip-key {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+}
+
+.hour-tooltip{
+    background-color: #fff;
+}
