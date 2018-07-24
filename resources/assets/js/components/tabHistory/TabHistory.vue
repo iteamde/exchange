@@ -90,46 +90,44 @@
                     enabled: false,
                     mode: 'index',
                     position: 'nearest',
-                    custom: function(tooltip){
+                    custom: function(tooltip) {
             			// Tooltip Element
                         var tooltipEl = document.getElementById('chartjs-tooltip');
-                        tooltipEl.innerHTML = "";
-                        if (!tooltipEl) {
-                            tooltipEl = document.createElement('div');
+                        tooltipEl.remove();
 
-                            this._chart.canvas.parentNode.appendChild(tooltipEl);
-                        }
-
+                        tooltipEl = document.createElement('div');
                         tooltipEl.id = 'chartjs-tooltip';
                         tooltipEl.innerHTML = '<table></table>';
+                        this._chart.canvas.parentNode.appendChild(tooltipEl);
                         
-                            // Hide if no tooltip
-                            if (tooltip.opacity === 0) {
-                                tooltipEl.style.opacity = 0;
-                                return;
-                            }
+                        // Hide if no tooltip
+                        if (tooltip.opacity === 0) {
+                            tooltipEl.style.opacity = 0;
+                            return;
+                        }
 
-                            // Set caret Position
-                            tooltipEl.classList.remove('above', 'below', 'no-transform');
-                            if (tooltip.yAlign) {
-                                tooltipEl.classList.add(tooltip.yAlign);
-                            } else {
-                                tooltipEl.classList.add('no-transform');
-                            }
+                        // Set caret Position
+                        tooltipEl.classList.remove('above', 'below', 'no-transform');
+                        if (tooltip.yAlign) {
+                            tooltipEl.classList.add(tooltip.yAlign);
+                        } else {
+                            tooltipEl.classList.add('no-transform');
+                        }
 
-                            function getBody(bodyItem) {
-                                return bodyItem.lines;
-                            }
+                        function getBody(bodyItem) {
+                            return bodyItem.lines;
+                        }
 
-                            // Set Text
-                            if (tooltip.body) {
-                                var titleLines = tooltip.title || [];
-                                var bodyLines = tooltip.body.map(getBody);
+                        // Set Text
+                        if (tooltip.body) {
+                            var titleLines = tooltip.title || [];
+                            var bodyLines = tooltip.body.map(getBody);
 
-                                var innerHtml = '<thead>';
+                            var innerHtml = '<thead>';
 
                             bodyLines.forEach(function(body) {
-                                innerHtml += '<tr><th>' + body +'</th></tr>';
+                                let text = body[0].match(/(?<=^| )\d+(\.\d+)?(?=$| )/)[0];
+                                innerHtml += '<tr><th>' + text +'</th></tr>';
                             });
                             innerHtml += '</thead><tbody>';
 
@@ -145,9 +143,12 @@
                         var positionY = this._chart.canvas.offsetTop;
                         var positionX = this._chart.canvas.offsetLeft;
 
+                        // get size of tooltipEl
+                        var tooltipElWidth = tooltipEl.offsetWidth / 2;
+
                         // Display, position, and set styles for font
                         tooltipEl.style.opacity = 1;
-                        tooltipEl.style.left = positionX + tooltip.caretX + 'px';
+                        tooltipEl.style.left = positionX + tooltip.caretX + tooltipElWidth + 'px';
                         tooltipEl.style.top = positionY + tooltip.caretY + 'px';
                         tooltipEl.style.fontFamily = tooltip._bodyFontFamily;
                         tooltipEl.style.fontSize = tooltip.bodyFontSize + 'px';
@@ -188,12 +189,9 @@
                 }
                 var valueForChart = [];
                 for(let i = 0; i < data.history.length; i++){
-                    // this.dataForDatasetChart.push(data.history[i].value);
                      valueForChart.push(data.history[i].value);
                 }
                 return valueForChart;
-                // console.log('value')
-                // console.log(this.valueForChart);
             },
             getNameOfDay(index){
                 let date = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
@@ -281,7 +279,10 @@
                                 pointRadius: 0,
                                 fill: false,
                                 borderColor: this.gradientStroke,
-                                pointBackgroundColor: this.gradientStroke,
+                                pointHoverRadius: 6,
+                                pointBackgroundColor: "rgb(55, 81, 126)",
+                                pointBorderColor: "rgb(255, 255, 255)",
+                                pointBorderWidth: 3,
                                 data: this.getDataForChart(json)
                                 }
                             ]

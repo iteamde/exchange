@@ -51,6 +51,7 @@
                 valueRates: null,
                 isoFrom: "GBP",
                 isoTo: "EUR",
+                //options for chart
                 options: {
                         legend: {
                         display: false
@@ -59,10 +60,9 @@
                     maintainAspectRatio: false,
                     scales:{
                         xAxes:[{
-                            isplay: true,
                             ticks: {
 							    callback: function(dataLabel, index) {
-							        // Hide the label of every 30nd dataset. return null to hide the grid line too
+							        // fromt for label 
 								    return index % 30 === 0 ? dataLabel : '';
 							    }
 						    },
@@ -113,7 +113,9 @@
                                 var innerHtml = '<thead>';
 
                                 bodyLines.forEach(function(body) {
-                                    innerHtml += '<tr><th>' + body +'</th></tr>';
+                                    //select only number and dot
+                                    let text = body[0].match(/(?<=^| )\d+(\.\d+)?(?=$| )/)[0];
+                                    innerHtml += '<tr><th>' + text +'</th></tr>';
                                 });
                                 innerHtml += '</thead><tbody>';
 
@@ -129,28 +131,18 @@
                             var positionY = this._chart.canvas.offsetTop;
                             var positionX = this._chart.canvas.offsetLeft;
 
+                            //get size of tooltipEl
+                            var tooltipElWidth = tooltipEl.offsetWidth / 1.5;
+
                             // Display, position, and set styles for font
                             tooltipEl.style.opacity = 1;
-                            tooltipEl.style.left = positionX + tooltip.caretX + 'px';
+                            tooltipEl.style.left = positionX + tooltip.caretX + tooltipElWidth + 'px';
                             tooltipEl.style.top = positionY + tooltip.caretY + 'px';
                             tooltipEl.style.fontFamily = tooltip._bodyFontFamily;
                             tooltipEl.style.fontSize = tooltip.bodyFontSize + 'px';
                             tooltipEl.style.fontStyle = tooltip._bodyFontStyle;
                             tooltipEl.style.padding = tooltip.yPadding + 'px ' + tooltip.xPadding + 'px';
                         }
-                        // callbacks:{
-                        //     title: (tooltipItem) => {
-                        //         return Number(tooltipItem.yLabel)//this.dataForChartLabels[tooltipItem[0]['index']];
-                        //     },
-                        //     label: (tooltipItem) => {
-                        //       return this.dataForChartLabels[tooltipItem['index']]
-                        //     }
-                        // },
-                        // backgroundColor: '#FFF',
-                        // titleFontSize: 16,
-                        // bodyFontColor: '#000',
-                        // bodyFontSize: 14,
-                        // displayColors: false
                     }
                 }
             }
@@ -187,17 +179,19 @@
                         }
                     }
                     this.datacollection = {
-                        labels: this.dataForChartLabels, //['00:00', '06:00', '12:00', '18:00', '24:00', '00:00', '06:00', '12:00', '18:00', '24:00'],
+                        labels: this.dataForChartLabels, 
                         datasets: [
                             {
                             label: 'Rates',
-                            // fontColor: "#666",
                             lineTension: 0,
                             pointRadius: 0,
                             fill: false,
                             borderColor: this.gradientStroke,
-                            pointBackgroundColor: this.gradientStroke,
-                            data: this.dataForChart //[0.8702, 0.8722, 0.8732, 0.8755, 0.8775, 0.8702, 0.8722, 0.8732, 0.8755, 0.8775]
+                            pointHoverRadius: 6,
+                            pointBackgroundColor: "rgb(55, 81, 126)",
+                            pointBorderColor: "rgb(255, 255, 255)",
+                            pointBorderWidth: 3,
+                            data: this.dataForChart 
                             }
                         ]
                     }
