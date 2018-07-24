@@ -64,6 +64,7 @@
         },
         mounted() {
             console.log('Component chartHistory mounted.');
+            this.cleaningTooltipForChart();
             //--- style for line 
             /**/ var ctx = document.getElementById('line-chart').getContext("2d");
             /**/ this.gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
@@ -93,7 +94,9 @@
                     custom: function(tooltip) {
             			// Tooltip Element
                         var tooltipEl = document.getElementById('chartjs-tooltip');
-                        tooltipEl.remove();
+                        if(tooltipEl) {
+                            tooltipEl.remove();
+                        }
 
                         tooltipEl = document.createElement('div');
                         tooltipEl.id = 'chartjs-tooltip';
@@ -267,7 +270,6 @@
                 fetch(url, {method: 'GET'})
                 .then((response) => {
                     return response.json().then((json) => {
-                        // console.log(json);
                         this.getDataForTables(json);
                         this.datacollection = {
                             labels: this.getDateForChart(json),
@@ -303,6 +305,10 @@
                         rates: "1 " + "GBP" + " = " + data.history[i].value + " EUR"
                     });
                 }
+            },
+            cleaningTooltipForChart(){
+                var tooltipEl = document.getElementById('chartjs-tooltip');
+                tooltipEl.remove()
             }
         }
     }
